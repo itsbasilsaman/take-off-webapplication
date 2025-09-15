@@ -16,8 +16,8 @@ export default function Home() {
      <LandingFeatureCards/>
      <HeroSection/>
      <SpeakersSection/>
-     <AudienceSection/>
-     <TestimonialsSection/>
+     {/* <AudienceSection/> */}
+     {/* <TestimonialsSection/> */}
     </>
   );
 }
