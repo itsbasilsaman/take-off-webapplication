@@ -34,3 +34,9 @@ h1, h2, h3, h4, h5, h6,
 .main-text {
   font-family: var(--font-dm-serif-display), serif;
 }
+
+
+@keyframes ticker-left-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}

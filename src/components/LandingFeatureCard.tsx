@@ -52,90 +52,39 @@ const features: FeatureCard[] = [
 ]
 
 export default function LandingFeatureCards() {
-  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
-  const [clickedCard, setClickedCard] = useState<string | null>(null)
-
-  const handleCardClick = (id: string) => {
-    setClickedCard(clickedCard === id ? null : id)
-  }
-
   return (
-    <div className="min-h-screen bg-gray-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#28587B] py-16 px-4 sm:px-6 lg:px-0">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <p className="text-lg sm:text-xl text-gray-600 mb-4 font-medium italic">Why takeoff 2025</p>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight text-balance">
-            <span className="text-[#359D9E] italic">Where founders</span>{" "}
-            <span className="text-[#359D9E] italic">Grow Together</span>
-          </h1>
+        <div className="text-center mb-14">
+          <p className="text-base sm:text-lg text-[#C09755] mb-2 font-medium italic">Why takeoff 2025</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold italic text-white mb-2">
+            Where founders <span className="block sm:inline">Grow Together</span>
+          </h2>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, i) => (
             <div
               key={feature.id}
-              className={`
-                relative bg-[#359D9E] rounded-2xl p-8 text-white cursor-pointer
-                transition-all duration-300 ease-in-out transform
-                ${hoveredCard === feature.id ? "scale-105 shadow-2xl" : "shadow-lg"}
-                ${clickedCard === feature.id ? "ring-4 ring-[#359D9E] ring-opacity-50" : ""}
-                hover:shadow-2xl active:scale-95
-              `}
-              onMouseEnter={() => setHoveredCard(feature.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-              onClick={() => handleCardClick(feature.id)}
+              className={`relative bg-white rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center shadow-md transition-all duration-300 ${i === 0 ? 'bg-[#e6f3fb]' : ''} hover:scale-105 hover:shadow-2xl active:scale-100`}
+              style={{ willChange: 'transform' }}
             >
-              {/* Background Pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#359D9E] to-[#359D9E] rounded-2xl opacity-90" />
-
-              {/* Content */}
-              <div className="relative z-10">
-                {/* Icon Container */}
-                <div
-                  className={`
-                  w-16 h-16 bg-white rounded-full flex items-center justify-center mb-6
-                  transition-transform duration-300
-                  ${hoveredCard === feature.id ? "rotate-12 scale-110" : ""}
-                `}
-                >
-                  <div className="text-[#359D9E]">{feature.icon}</div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl sm:text-2xl italic font-bold mb-4 leading-tight">{feature.title}</h3>
-
-                {/* Description */}
-                <p
-                  className={`
-                   text-white leading-relaxed text-sm sm:text-base
-                  transition-all duration-300
-                  ${clickedCard === feature.id ? "text-white font-medium" : ""}
-                `}
-                >
-                  {feature.description}
-                </p>
-
-                {/* Interactive Indicator */}
-                {clickedCard === feature.id && (
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-white rounded-full animate-pulse" />
-                )}
+              {/* Icon */}
+              <div className={`w-14 h-14 flex items-center justify-center rounded-full mb-5 ${ 'bg-[#28587B]'}`}>
+                <span className={`   'text-white'}`}>{feature.icon}</span>
               </div>
-
-              {/* Hover Effect Overlay */}
-              <div
-                className={`
-                absolute inset-0 bg-white rounded-2xl transition-opacity duration-300
-                ${hoveredCard === feature.id ? "opacity-5" : "opacity-0"}
-              `}
-              />
+              {/* Title */}
+              <h3 className={`text-lg sm:text-xl md:text-2xl font-bold italic mb-2 leading-snug ${i === 0 ? 'text-[#28587B]' : 'text-[#28587B]'}`}>{feature.title}</h3>
+              {/* Divider */}
+              <div className="w-16 h-px bg-gray-300 mx-auto mb-3" />
+              {/* Description */}
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
-
-        
       </div>
-    </div>
+    </section>
   )
 }
