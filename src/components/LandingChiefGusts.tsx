@@ -31,7 +31,7 @@ const leaders = [
 
 export default function LandingChiefGusts() {
   return (
-    <main className="min-h-screen  bg-white">
+    <main className="   bg-white">
       <section className="py-16 px-4 md:px-8 lg:px-16 max-w-[1390px] mx-auto">
         <div className="mb-12">
           <p className="text-sm text-black mb-4 font-medium">Our Chief Guests</p>

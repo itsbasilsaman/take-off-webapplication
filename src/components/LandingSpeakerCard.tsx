@@ -1,3 +1,5 @@
+ 
+
 import { FiArrowRight } from "react-icons/fi"
 import { RxArrowTopRight } from "react-icons/rx";
 
@@ -55,7 +57,7 @@ const speakers = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#13bba7] via-[#70cac0] to-[#b1f7ee] relative overflow-hidden">
+    <div className="  bg-gradient-to-br from-[#13bba7] via-[#70cac0] to-[#b1f7ee] relative overflow-hidden">
       {/* Speaker background image */}
       <div className="absolute inset-0 z-0">
         <img
@@ -136,14 +138,19 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center items-center gap-2 lg:justify-end max-w-7xl mx-auto">
-          <button className="group bg-[#215273] hover:bg-[#1b2e3a] text-white px-6 md:px-8 py-3 md:py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl">
+          <button
+            className="group bg-[#215273] hover:bg-[#1b2e3a] active:scale-95 text-white px-6 md:px-8 py-3 md:py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl focus:outline-none cursor-pointer"
+            style={{ height: '48px' }}
+          >
             View all Speakers
-           
           </button>
 
-           <div className=" border-[#215273] border p-1.5 md:p-2 rounded-full group-hover:bg-[#215273] transition-colors duration-300 text-[#215273]">
-              <RxArrowTopRight className="w-4 h-4 md:w-6 md:h-6" />
-            </div>
+          <div
+            className="flex items-center justify-center border-[#215273] border p-3 rounded-full bg-white transition-all duration-300 text-[#215273] hover:bg-[#215273] hover:text-white active:scale-95 cursor-pointer"
+            style={{ height: '48px', width: '48px' }}
+          >
+            <RxArrowTopRight className="transition-transform duration-300 w-full h-full   group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </div>
         </div>
       </div>
     </div>

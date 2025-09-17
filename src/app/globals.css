@@ -6,6 +6,65 @@
   --foreground: #171717;
 }
 
+@keyframes fadein {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadein {
+  animation: fadein 1s ease-in;
+}
+
+@keyframes slidein {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.animate-slidein {
+  animation: slidein 1s ease-in;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.95); }
+  60% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.animate-pop {
+  animation: pop 0.4s cubic-bezier(.17,.67,.83,.67);
+}
+
+@media (max-width: 640px) {
+  .animate-fadein, .animate-slidein {
+    animation-duration: 0.7s;
+  }
+  .lg\:grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+  .gap-8 {
+    gap: 2rem !important;
+  }
+  .lg\:gap-12 {
+    gap: 2.5rem !important;
+  }
+  .mb-8 {
+    margin-bottom: 2.5rem !important;
+  }
+  .px-4 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  .py-12 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .w-full {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -39,4 +98,10 @@ h1, h2, h3, h4, h5, h6,
 @keyframes ticker-left-right {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0%); }
+}
+
+.animate-slidein { animation: slidein 0.7s cubic-bezier(.4,0,.2,1); }
+@keyframes slidein {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
 }

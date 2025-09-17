@@ -55,21 +55,25 @@ export default function HomeBanner() {
 
   if (isLoading) {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center min-h-screen bg-white/60 backdrop-blur-xl transition-opacity duration-500">
+      <div className="fixed inset-0 z-50 flex items-center justify-center min-h-screen bg-white/40 backdrop-blur-md transition-opacity duration-500">
         <div className="flex flex-col items-center justify-center">
           <div className="relative w-16 h-16 mb-4">
-            <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#359D9E] to-[#C09755] opacity-30 blur-2xl animate-pulse" />
+            <span className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#359D9E] to-[#C09755] opacity-40 blur-lg animate-pulse" />
             <span className="absolute inset-0 rounded-full border-4 border-[#359D9E] border-t-transparent animate-spin-fast" />
-            <span className="absolute inset-2 rounded-full bg-white/80" />
-            <FaGlobe className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#359D9E] text-2xl animate-pulse" />
+            <span className="absolute inset-2 rounded-full bg-white/70 blur-sm" />
+            <Image src="/logo.png" alt="Logo" fill className="absolute top-1/2 left-1/2 w-10 h-10 object-contain animate-spin-slow" style={{transform: 'translate(-50%, -50%)'}} />
           </div>
-          <p className="text-[#215273] text-lg font-semibold animate-fade-in">Loading Dubai Experience...</p>
+          <p className="text-[#215273] text-base font-semibold animate-fade-in">Loading Dubai Experience...</p>
         </div>
         {/* Add to your global CSS:
         @keyframes spin-fast { to { transform: rotate(360deg); } }
         .animate-spin-fast { animation: spin-fast 0.5s linear infinite; }
+        @keyframes spin-slow { to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 1.2s linear infinite; }
         @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
         .animate-fade-in { animation: fade-in 0.5s ease; }
+        @keyframes text-in { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-text-in { animation: text-in 0.7s cubic-bezier(.4,0,.2,1) forwards; }
         */}
       </div>
     )
@@ -98,10 +102,10 @@ export default function HomeBanner() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-24">
+      <div className="relative z-10 w-full flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-24 pt-16 sm:pt-0">
   <div className="w-full max-w-[915px] flex flex-col items-start justify-center text-left" style={{   marginTop: '6vh' }}>
-          <p className="text-[#C09755] text-base md:text-lg font-medium mb-2 tracking-widest uppercase">WHERE FOUNDERS GROW TOGETHER</p>
-          <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-serif italic font-semibold leading-snug mb-12" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3}}>
+          <p className="text-[#C09755] text-[14px] md:text-lg font-medium mb-2 tracking-widest uppercase">WHERE FOUNDERS GROW TOGETHER</p>
+          <h1 className="text-white text-[28px] md:text-5xl lg:text-6xl font-serif italic font-semibold leading-snug mb-6 sm:mb-12" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3}}>
             Takeoff Business Conclave &<br />Expedition to Explore Dubai
           </h1>
           <div className="flex flex-col items-start gap-3 mb-8">
@@ -115,11 +119,37 @@ export default function HomeBanner() {
             </div>
           </div>
          <div className="flex items-center gap-2 justify-start">
-            <button className="bg-[#C09755] hover:bg-[#785419] text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group inline-flex items-center">
+            <button
+              className="bg-[#C09755] text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all duration-300 group inline-flex items-center
+                hover:bg-[#785419] hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C09755]"
+              style={{
+                boxShadow: '0 4px 24px 0 rgba(192,151,85,0.15)',
+                transition: 'transform 0.2s, box-shadow 0.2s',
+              }}
+              onMouseDown={e => e.currentTarget.classList.add('scale-95')}
+              onMouseUp={e => e.currentTarget.classList.remove('scale-95')}
+            >
               Register Now
             </button>
-            <span className="w-10 h-10 flex items-center justify-center rounded-full border border-white group-hover:bg-[#FFC107] transition-colors duration-200">
-              <RxArrowTopRight className="h-6 w-6 text-white group-hover:text-[#222]" />
+            <span
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-white transition-colors duration-200 cursor-pointer
+                hover:bg-[#FFC107] active:scale-90"
+              style={{ transition: 'background 0.2s, transform 0.2s' }}
+              tabIndex={0}
+              onMouseDown={e => e.currentTarget.classList.add('scale-90')}
+              onMouseUp={e => e.currentTarget.classList.remove('scale-90')}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.currentTarget.classList.add('scale-90');
+                }
+              }}
+              onKeyUp={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.currentTarget.classList.remove('scale-90');
+                }
+              }}
+            >
+              <RxArrowTopRight className="h-6 w-6 text-white group-hover:text-[#222] transition-colors duration-200" />
             </span>
          </div>
         </div>
@@ -163,31 +193,32 @@ export default function HomeBanner() {
           </div>
         </div>
 
-        {/* Mobile View: Fixed Countdown at Bottom */}
-  <div className="md:hidden fixed left-0 right-0 bottom-0 z-[9999] w-full">
-          <div className="bg-[#215273] rounded-t-xl shadow-2xl px-4 py-4 flex flex-col items-center gap-2 w-full">
-            <div className="text-center">
-              <h3 className="text-white text-base font-semibold mb-1 italic">Early Bird Closing In</h3>
-              <p className="text-white/80 text-xs">(Until Sept 30)</p>
+       
+        {/* Mobile View: Countdown Section (bottom of main content, full width, animated text) */}
+        <div className="md:hidden w-full px-0 mt-8 mb-0 flex justify-center">
+          <div className="bg-[#215273] rounded-t-md shadow-2xl px-0 py-3 flex flex-col items-center gap-1 w-full animate-fade-in" style={{boxShadow: '0 4px 24px 0 rgba(33,82,115,0.15)'}}>
+            <div className="w-full flex flex-row items-center justify-between mb-1 px-4">
+              <h3 className="text-white text-sm font-semibold italic animate-text-in">Early Bird Closing In</h3>
+              <span className="text-white/80 text-xs animate-text-in" style={{animationDelay: '0.2s'}}> (Until Sept 30)</span>
             </div>
-            <div className="flex flex-row justify-center items-center w-full gap-2">
-              <div className="flex flex-col items-center flex-1">
-                <div className="text-2xl font-bold text-white">{timeLeft.days.toString().padStart(2, "0")}</div>
+            <div className="flex flex-row justify-center items-center w-full gap-1 px-4">
+              <div className="flex flex-col items-center flex-1 animate-text-in" style={{animationDelay: '0.3s'}}>
+                <div className="text-xl font-bold text-white drop-shadow-sm">{timeLeft.days.toString().padStart(2, "0")}</div>
                 <div className="text-[10px] text-white/80 mt-0.5">days</div>
               </div>
-              <div className="w-px h-6 bg-white/30 mx-1" />
-              <div className="flex flex-col items-center flex-1">
-                <div className="text-2xl font-bold text-white">{timeLeft.hours.toString().padStart(2, "0")}</div>
+              <div className="w-px h-5 bg-white/30 mx-0.5" />
+              <div className="flex flex-col items-center flex-1 animate-text-in" style={{animationDelay: '0.4s'}}>
+                <div className="text-xl font-bold text-white drop-shadow-sm">{timeLeft.hours.toString().padStart(2, "0")}</div>
                 <div className="text-[10px] text-white/80 mt-0.5">hours</div>
               </div>
-              <div className="w-px h-6 bg-white/30 mx-1" />
-              <div className="flex flex-col items-center flex-1">
-                <div className="text-2xl font-bold text-white">{timeLeft.minutes.toString().padStart(2, "0")}</div>
+              <div className="w-px h-5 bg-white/30 mx-0.5" />
+              <div className="flex flex-col items-center flex-1 animate-text-in" style={{animationDelay: '0.5s'}}>
+                <div className="text-xl font-bold text-white drop-shadow-sm">{timeLeft.minutes.toString().padStart(2, "0")}</div>
                 <div className="text-[10px] text-white/80 mt-0.5">minutes</div>
               </div>
-              <div className="w-px h-6 bg-white/30 mx-1" />
-              <div className="flex flex-col items-center flex-1">
-                <div className="text-2xl font-bold text-white">{timeLeft.seconds.toString().padStart(2, "0")}</div>
+              <div className="w-px h-5 bg-white/30 mx-0.5" />
+              <div className="flex flex-col items-center flex-1 animate-text-in" style={{animationDelay: '0.6s'}}>
+                <div className="text-xl font-bold text-white drop-shadow-sm">{timeLeft.seconds.toString().padStart(2, "0")}</div>
                 <div className="text-[10px] text-white/80 mt-0.5">seconds</div>
               </div>
             </div>

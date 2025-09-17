@@ -17,8 +17,8 @@ export default function Header() {
     
 
       {/* Floating Header */}
-  <header className="fixed top-4 left-4 right-4 z-50 md:top-6 md:left-6 md:right-6 lg:top-8 lg:left-20 lg:right-20">
-        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 px-4 py-3 md:px-6 md:py-4">
+  <header className="fixed top-4 left-4 right-4 z-50 md:top-6 md:left-6 md:right-6 lg:top-6 lg:left-20 lg:right-20">
+        <div className="bg-white/55 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 px-4 py-3 md:px-6 md:py-4">
           <div className="flex items-center justify-between">
             {/* Logo Section */}
             <div className="flex-1 flex items-center justify-start min-w-0">
