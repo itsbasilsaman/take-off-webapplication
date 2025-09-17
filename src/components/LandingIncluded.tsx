@@ -9,7 +9,7 @@ export default function WhatIsIncluded() {
   useEffect(() => {
     const interval = setInterval(() => {
       setShowSecondImage(prev => !prev);
-    }, 1500);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
   const includedItems = [
@@ -37,7 +37,7 @@ export default function WhatIsIncluded() {
       
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-16 py-16 lg:py-24 animate-fadein">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-cyan-400 italic font-serif text-center mb-10 sm:mb-16">What is included?</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#359D9E] italic font-serif text-center mb-10 sm:mb-16">What is included?</h2>
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Images: stacked for mobile/tablet, original overlap for desktop */}
           <div className="w-full mb-8 lg:mb-0 order-1 lg:order-2">
@@ -45,12 +45,20 @@ export default function WhatIsIncluded() {
             <div className="w-full lg:hidden flex justify-center items-center">
               <div className="relative w-full max-w-md h-48 sm:h-56 rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  key={showSecondImage ? 'img2' : 'img1'}
-                  src={showSecondImage ? "/business-professionals.png" : "/middle-eastern.png"}
-                  alt={showSecondImage ? "Business executives in meeting" : "Business professionals in conference room"}
+                  src="/middle-eastern.png"
+                  alt="Business professionals in conference room"
                   width={400}
                   height={240}
-                  className={`w-full h-full object-cover transition-all duration-700 animate-slidein`}
+                  className={`w-full h-full object-cover transition-all duration-700 ${showSecondImage ? 'opacity-0' : 'opacity-100'} absolute top-0 left-0`}
+                  style={{ transition: 'opacity 2s' }}
+                />
+                <Image
+                  src="/business-professionals.png"
+                  alt="Business executives in meeting"
+                  width={400}
+                  height={240}
+                  className={`w-full h-full object-cover transition-all duration-700 ${showSecondImage ? 'opacity-100' : 'opacity-0'} absolute top-0 left-0`}
+                  style={{ transition: 'opacity 2s' }}
                 />
               </div>
             </div>
@@ -95,13 +103,13 @@ export default function WhatIsIncluded() {
             <div className="space-y-3 sm:space-y-4">
               {includedItems.map((item, index) => (
                 <div key={index} className="flex items-center gap-3 sm:gap-4">
-                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 bg-cyan-400 rounded-full flex items-center justify-center">
+                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7   rounded-full flex items-center justify-center">
                     <Image
                       src="/vector.png"
                       alt="Included item check"
                       width={20}
                       height={20}
-                      className="w-4 h-4 object-contain"
+                      className="w-6 h-6 object-contain"
                     />
                   </div>
                   <span className="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed">{item}</span>

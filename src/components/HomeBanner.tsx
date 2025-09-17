@@ -61,11 +61,14 @@ export default function HomeBanner() {
       {isLoading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#1a2a38] bg-opacity-90 transition-opacity duration-700 animate-fade-in">
           <div className="flex flex-col items-center gap-4">
+            <img src="/white-icon.png" alt="Takeoff Logo" className="w-20   mb-2 animate-fade-in-up" />
             <span className="text-[#C09755] text-lg md:text-2xl font-bold tracking-widest animate-fade-in-up">Takeoff Business Conclave</span>
             <span className="text-white text-2xl md:text-5xl font-serif italic font-semibold animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif'}}>
               &amp; Expedition to Explore Dubai
             </span>
-            <span className="text-white/80 text-base md:text-lg animate-fade-in-up">Loading...</span>
+            <span className="mt-4 animate-fade-in-up">
+              <span className="inline-block w-8 h-8 border-4 border-white border-t-[#C09755] rounded-full animate-spin"></span>
+            </span>
           </div>
         </div>
       )}
@@ -79,13 +82,7 @@ export default function HomeBanner() {
           priority
         />
         {/* Blended business people overlay */}
-        <Image
-          src="/about-image.png"
-          alt="Business people"
-          fill
-          className="object-contain opacity-30 mix-blend-soft-light"
-          priority
-        />
+        
         <div  />
       </div>
 
@@ -110,14 +107,19 @@ export default function HomeBanner() {
           </div>
          <div className="flex items-center gap-2 justify-start animate-fade-in-up" style={{animationDelay: '0.8s'}}>
             <button
-              className="bg-[#C09755] text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all duration-300 group inline-flex items-center
-                hover:bg-[#785419] hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C09755]"
+              className="bg-[#C09755] text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all duration-300 group inline-flex items-center hover:bg-[#785419] hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C09755] cursor-pointer"
               style={{
                 boxShadow: '0 4px 24px 0 rgba(192,151,85,0.15)',
                 transition: 'transform 0.2s, box-shadow 0.2s',
+                cursor: 'pointer',
               }}
               onMouseDown={e => e.currentTarget.classList.add('scale-95')}
               onMouseUp={e => e.currentTarget.classList.remove('scale-95')}
+              onClick={() => {
+                const phone = '919207078555';
+                const message = encodeURIComponent('Hello! I am interested in registering for the Takeoff Business Conclave & Expedition to Explore Dubai.');
+                window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+              }}
             >
               Register Now
             </button>
@@ -185,8 +187,8 @@ export default function HomeBanner() {
 
        
         {/* Mobile View: Countdown Section (bottom of main content, full width, animated text) */}
-  <div className="md:hidden w-full px-0 mt-8 mb-0 flex justify-center animate-fade-in-up" style={{animationDelay: '1.2s'}}>
-          <div className="bg-[#215273] rounded-t-md shadow-2xl px-0 py-3 flex flex-col items-center gap-1 w-full animate-fade-in" style={{boxShadow: '0 4px 24px 0 rgba(33,82,115,0.15)'}}>
+  <div className="md:hidden w-full px-0 flex justify-center animate-fade-in-up absolute left-0 right-0 bottom-0 z-20" style={{animationDelay: '1.2s'}}>
+    <div className="bg-[#215273] rounded-t-md shadow-2xl px-0 py-3 flex flex-col items-center gap-1 w-full animate-fade-in" style={{boxShadow: '0 4px 24px 0 rgba(33,82,115,0.15)'}}>
             <div className="w-full flex flex-row items-center justify-between mb-1 px-4">
               <h3 className="text-white text-sm font-semibold italic animate-text-in">Early Bird Closing In</h3>
               <span className="text-white/80 text-xs animate-text-in" style={{animationDelay: '0.2s'}}> (Until Sept 30)</span>

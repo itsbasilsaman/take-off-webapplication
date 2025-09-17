@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef, useState } from "react"
 import { MdChevronRight } from "react-icons/md"
 
 const leaders = [
@@ -30,9 +31,33 @@ const leaders = [
 ]
 
 export default function LandingChiefGusts() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <main className="   bg-white">
-      <section className="py-16 px-4 md:px-8 lg:px-16 max-w-[1390px] mx-auto">
+    <main className="bg-white">
+      <section
+        ref={sectionRef}
+        className={`py-16 px-4 md:px-8 lg:px-16 max-w-[1390px] mx-auto transition-all duration-700 ease-out
+          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}
+        `}
+      >
         <div className="mb-12">
           <p className="text-sm text-black mb-4 font-medium">Our Chief Guests</p>
           <h2 className="text-4xl md:text-[52px]   font-serif italic text-[#C09755] leading-tight text-balance">

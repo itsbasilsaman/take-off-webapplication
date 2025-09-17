@@ -66,37 +66,28 @@ export default function LandingFeatureCards() {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, i) => {
-            // Animation directions: 0 = left, 1 = right, 2 = bottom
-            const directions = [
-              { x: -80, y: 40 }, // left
-              { x: 80, y: 40 },  // right
-              { x: 0, y: 80 }    // bottom
-            ];
-            const dir = directions[i % directions.length];
-            return (
-              <motion.div
-                key={feature.id}
-                initial={{ opacity: 0, x: dir.x, y: dir.y }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ type: "spring", stiffness: 60, damping: 18, duration: 0.7 }}
-                className={`relative bg-white rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center shadow-md transition-all duration-300 ${i === 0 ? 'bg-[#e6f3fb]' : ''} hover:scale-105 hover:shadow-2xl active:scale-100`}
-                style={{ willChange: 'transform' }}
-              >
-                {/* Icon */}
-                <div className={`w-14 h-14 flex items-center justify-center rounded-full mb-5 bg-[#28587B]`}>
-                  <span className={`text-white`}>{feature.icon}</span>
-                </div>
-                {/* Title */}
-                <h3 className={`text-lg sm:text-xl md:text-2xl font-bold italic mb-2 leading-snug text-[#28587B]`}>{feature.title}</h3>
-                {/* Divider */}
-                <div className="w-16 h-px bg-gray-300 mx-auto mb-3" />
-                {/* Description */}
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{feature.description}</p>
-              </motion.div>
-            );
-          })}
+          {features.map((feature, i) => (
+            <motion.div
+              key={feature.id}
+              className={`relative bg-white rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center shadow-md transition-all duration-300 ${i === 0 ? 'bg-[#e6f3fb]' : ''} hover:scale-105 hover:shadow-2xl active:scale-100`}
+              style={{ willChange: 'transform' }}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: 'easeOut', delay: i * 0.15 }}
+            >
+              {/* Icon */}
+              <div className={`w-14 h-14 flex items-center justify-center rounded-full mb-5 ${ 'bg-[#28587B]'}`}>
+                <span className={`   'text-white'}`}>{feature.icon}</span>
+              </div>
+              {/* Title */}
+              <h3 className={`text-lg sm:text-xl md:text-2xl font-bold italic mb-2 leading-snug ${i === 0 ? 'text-[#28587B]' : 'text-[#28587B]'}`}>{feature.title}</h3>
+              {/* Divider */}
+              <div className="w-16 h-px bg-gray-300 mx-auto mb-3" />
+              {/* Description */}
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

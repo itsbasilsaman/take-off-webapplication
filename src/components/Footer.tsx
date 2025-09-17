@@ -1,23 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaPhone, FaEnvelope, FaChevronUp } from "react-icons/fa"
-
+import { FaFacebookF, FaYoutube, FaEnvelope, FaPhone } from "react-icons/fa"
+import { BsWhatsapp } from "react-icons/bs"
+import { RxArrowTopRight } from "react-icons/rx";
 export default function Footer() {
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null)
-  const [showScrollTop, setShowScrollTop] = useState(false)
-
-  // Handle scroll to top
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
-
-  // Show/hide scroll to top button based on scroll position
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      setShowScrollTop(window.scrollY > 300)
-    })
-  }
 
   const navigationLinks = [
     { name: "Home", href: "#home", active: true },
@@ -37,146 +24,125 @@ export default function Footer() {
     { name: "Contact Us", href: "#contact" },
   ]
 
-  const socialLinks = [
-    { icon: FaFacebookF, href: "#facebook", color: "hover:bg-blue-600" },
-    { icon: FaInstagram, href: "#instagram", color: "hover:bg-pink-600" },
-    { icon: FaLinkedinIn, href: "#linkedin", color: "hover:bg-blue-700" },
-    { icon: FaTwitter, href: "#twitter", color: "hover:bg-blue-400" },
-  ]
+ 
 
   return (
-    <footer className="relative">
-      {/* Scroll to top button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed top-4 right-4 z-50 bg-[#359D9E] hover:bg-[#359D9E] text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110"
-          aria-label="Scroll to top"
-        >
-          <FaChevronUp className="w-4 h-4" />
-        </button>
-      )}
-
-      <div className="flex flex-col lg:flex-row min-h-[400px]">
-        {/* Left Section - #359D9E Background */}
-        <div className="bg-[#359D9E] flex-1 px-6 py-12 lg:px-12 lg:py-16">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-              {/* First Column */}
-              <div className="space-y-6">
-                {navigationLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className={`block text-white transition-all duration-300 hover:translate-x-2 ${
-                      link.active
-                        ? "text-lg font-medium border-l-2 border-white pl-4"
-                        : "text-base hover:text-[#359D9E] italic"
-                    }`}
-                    onMouseEnter={() => setHoveredLink(link.name)}
-                    onMouseLeave={() => setHoveredLink(null)}
-                    style={{
-                      transform: hoveredLink === link.name ? "translateX(8px)" : "translateX(0)",
-                      opacity: hoveredLink && hoveredLink !== link.name ? 0.7 : 1,
-                    }}
-                  >
-                    {link.active && "> "}
-                    {link.name}
-                  </a>
-                ))}
-              </div>
-
-              {/* Second Column */}
-              <div className="space-y-6">
-                {secondaryLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="block text-white text-base hover:text-[#359D9E] italic transition-all duration-300 hover:translate-x-2"
-                    onMouseEnter={() => setHoveredLink(link.name)}
-                    onMouseLeave={() => setHoveredLink(null)}
-                    style={{
-                      transform: hoveredLink === link.name ? "translateX(8px)" : "translateX(0)",
-                      opacity: hoveredLink && hoveredLink !== link.name ? 0.7 : 1,
-                    }}
-                  >
-                    {link.name}
-                  </a>
-                ))}
-              </div>
+    <footer className="bg-black text-white pt-8 pb-4 px-2 sm:px-8">
+      {/* Top WhatsApp and Search Bar Section */}
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pb-4 border-b border-gray-700">
+        <div className="flex items-center gap-2">
+          <span className="text-[#23b3a3] text-2xl font-semibold italic">Connect WhatsApp</span>
+          <BsWhatsapp className="text-[#23b3a3] text-2xl" />
+        
+          </div>
+        <div className="flex-1 flex items-center justify-center">
+          <input
+            type="text"
+            placeholder="Discover Groundbreaking Insights, Connect With Industry Leaders, And Accelerate Your Business Growth At Takeoff 2025."
+            className="w-full max-w-xl rounded-full px-6 py-2 bg-transparent border border-gray-600 text-gray-300 placeholder:text-gray-400 focus:outline-none"
+          />
+        </div>
+        <div className="flex items-center gap-2">
+            <button
+              className="group bg-[#359D9E] hover:bg-[#173c54] text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl flex items-center gap-2 md:gap-3 focus:outline-none focus:ring-2 focus:ring-[##359D9E] animate-pop"
+              onClick={() => {
+                const phone = '919207078555';
+                const message = encodeURIComponent('Hello, I am interested in Takeoff 2025!');
+                window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+              }}
+            >
+              Connect Now
+            </button>
+            <div className="text-white border border-white p-2 rounded-full transition-colors ml-2 group-hover:bg-[#19415c] group-hover:scale-110 group-hover:shadow-lg duration-300 ease-in-out">
+              <RxArrowTopRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
             </div>
+        </div>
+      </div>
 
-            {/* Copyright */}
-            <div className="mt-12 pt-8 border-t border-[#359D9E]">
-              <p className="text-white text-sm opacity-80">© Copyright 2025 by Take Off. All Rights Reserved</p>
+      {/* Main Footer Section */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8">
+        {/* Contact Info - Redesigned */}
+        <div className="flex flex-col gap-6">
+          {/* Call Us Row */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-transparent">
+              <img src="/call-us.png" alt="Call Us" className="w-10 h-10 object-contain" />
             </div>
+            <div className="flex flex-col">
+              <span className="text-[#23b3a3] text-base font-medium">How can I assist you today?</span>
+              <span className="text-gray-300 text-base">+91 92070 78555‬
+</span>
+            </div>
+          </div>
+          {/* Email Row */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-transparent">
+              <img src="/email.png" alt="Email" className="w-10 h-10 object-contain" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[#23b3a3] text-base font-medium">Email</span>
+              <span className="text-gray-300 text-base">info@takeoffbusinessnetwork.com</span>
+            </div>
+          </div>
+          {/* Phone Row - icon on right */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center w-12 h-12 rounded-full bg-transparent">
+              <img src="/sales.png" alt="Sales Team" className="w-10 h-10 object-contain" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[#23b3a3] text-base font-medium">Sales Team</span>
+              <span className="text-gray-300 text-base">+971-525-554-623</span>
+            </div>
+            
           </div>
         </div>
 
-        {/* Right Section - Black Background */}
-        <div className="bg-black flex-1 px-6 py-12 lg:px-12 lg:py-16 lg:max-w-md">
-          <div className="space-y-8">
-            {/* Logo and Tagline */}
-            <div className="text-center lg:text-left">
-              <h2 className="text-white text-2xl lg:text-3xl font-bold tracking-wider mb-2">TAKE-OFF</h2>
-              <p className="text-gray-400 text-sm tracking-wide mb-1">BUSINESS NETWORK</p>
-              <p className="text-white text-sm italic mt-4">Igniting Innovation. Shaping Tomorrow.</p>
-            </div>
-
-            {/* Contact Information */}
-            <div className="space-y-6">
-              {/* Email Section */}
-              <div>
-                <h3 className="text-white text-sm font-medium tracking-wider mb-3">DROP US A LINE</h3>
-                <a
-                  href="mailto:info@takeoffbusinessnetwork.com"
-                  className="text-white hover:text-[#359D9E] transition-colors duration-300 flex items-center gap-2"
-                >
-                  <FaEnvelope className="w-4 h-4" />
-                  info@takeoffbusinessnetwork.com
-                </a>
-              </div>
-
-              {/* Phone Section */}
-              <div>
-                <h3 className="text-white text-sm font-medium tracking-wider mb-3">CALL US</h3>
-                <div className="space-y-2">
-                  <a
-                    href="tel:+12133312345"
-                    className="text-white hover:text-[#359D9E] transition-colors duration-300 flex items-center gap-2"
-                  >
-                    <FaPhone className="w-4 h-4 text-green-500" />
-                    +1 (213) 333-12345
-                  </a>
-                  <a
-                    href="tel:+12133312345"
-                    className="text-white hover:text-[#359D9E] transition-colors duration-300 flex items-center gap-2"
-                  >
-                    <FaPhone className="w-4 h-4" />
-                    +1 (213) 333-12345
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className="flex gap-3 justify-center lg:justify-start">
-              {socialLinks.map((social, index) => {
-                const IconComponent = social.icon
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className={`w-10 h-10 bg-[#359D9E] ${social.color} rounded-full flex items-center justify-center text-white transition-all duration-300 transform hover:scale-110 hover:rotate-12`}
-                    aria-label={`Social media link ${index + 1}`}
-                  >
-                    <IconComponent className="w-4 h-4" />
-                  </a>
-                )
-              })}
-            </div>
+        {/* Navigation Links */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-col gap-2">
+            <span className="text-gray-300">Home</span>
+            <span className="text-gray-300">About Takeoff 2025</span>
+            <span className="text-gray-300">Our Mission</span>
+            <span className="text-gray-300">Speakers</span>
+            <span className="text-gray-300">Why Attend</span>
+            <span className="text-gray-300">Who Should Attend</span>
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="text-gray-300">Agenda</span>
+            <span className="text-gray-300">Highlights</span>
+            <span className="text-gray-300">FAQs</span>
+            <span className="text-gray-300">Terms and Conditions</span>
+            <span className="text-gray-300">Privacy policy</span>
+            <span className="text-gray-300">Contact Us</span>
           </div>
         </div>
+
+        {/* Logo, Newsletter, Social */}
+        <div className="flex flex-col items-center md:items-end gap-6">
+          <img src="/white-icon.png" alt="Take-Off Business Network" className="w-44 mb-2" />
+          <span className="text-gray-300 text-base mb-2">Stay updated with Takeoff news and events.</span>
+          <form className="flex w-full max-w-xs gap-0 border-b border-gray-700 pb-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-2 rounded-l bg-black text-gray-200 placeholder:text-gray-400 border-none focus:outline-none"
+            />
+            <button type="submit" className="bg-[#29516a] text-white px-6 py-2 rounded-r font-semibold">SUBMIT</button>
+          </form>
+         <div className="flex gap-6 items-center">
+            <span className="text-[#23b3a3] text-base font-semibold mt-2">FOLLOW US ON</span>
+            <div className="flex gap-6 mt-2">
+              <a href="#facebook" className="w-9 h-9 rounded-full border border-[#23b3a3] flex items-center justify-center text-[#23b3a3] hover:bg-[#23b3a3] hover:text-black transition-colors"><FaFacebookF /></a>
+              <a href="#instagram" className="w-9 h-9 rounded-full border border-[#23b3a3] flex items-center justify-center text-[#23b3a3] hover:bg-[#23b3a3] hover:text-black transition-colors"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.25.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0z"/></svg></a>
+              <a href="#youtube" className="w-9 h-9 rounded-full border border-[#23b3a3] flex items-center justify-center text-[#23b3a3] hover:bg-[#23b3a3] hover:text-black transition-colors"><FaYoutube /></a>
+            </div>
+         </div>
+        </div>
+      </div>
+
+      {/* Copyright */}
+      <div className="border-t border-gray-700 pt-4 mt-4 text-center text-gray-400 text-xs">
+        © Copyright 2025 By Take OFF. All Rights Reserved.
       </div>
     </footer>
   )

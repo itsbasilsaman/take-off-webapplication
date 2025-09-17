@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { motion } from "framer-motion"
  
 import { RxArrowTopRight } from "react-icons/rx";
 
@@ -12,8 +13,6 @@ export default function LandingAbout() {
     minutes: 14,
     seconds: 2,
   })
-  const [isLoading, setIsLoading] = useState(true);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -30,31 +29,12 @@ export default function LandingAbout() {
         return prev
       })
     }, 1000)
+
     return () => clearInterval(timer)
   }, [])
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      setIsVisible(true);
-    }, 600);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white to-slate-900 relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 pb-20 lg:pb-40">
-      {/* Initial Loading Overlay Animation */}
-      {isLoading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#215273] bg-opacity-90 transition-opacity duration-700 animate-fade-in">
-          <div className="flex flex-col items-center gap-4">
-            <span className="text-[#C09755] text-lg md:text-2xl font-bold tracking-widest animate-fade-in-up">Takeoff Business Expedition 2025</span>
-            <span className="text-white text-2xl md:text-5xl font-serif italic font-semibold animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif'}}>
-              From Vision to Venture
-            </span>
-            <span className="text-white/80 text-base md:text-lg animate-fade-in-up">Loading...</span>
-          </div>
-        </div>
-      )}
+    <div className="min-h-screen bg-white to-slate-900 relative px-4 sm:px-6 lg:px-8 py-12 sm:py-16 pb-20 lg:pb-40 animate-fadein">
     
       
 
@@ -62,8 +42,8 @@ export default function LandingAbout() {
 
       
 
-    {/* Main Content */}
-    <div className={`relative z-10 px-2 sm:px-4 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20 transition-all duration-700 ${isVisible ? 'opacity-100 animate-slide-in-bottom-right' : 'opacity-0 translate-x-20 translate-y-20'}`}>
+      {/* Main Content */}
+  <div className="relative z-10 px-2 sm:px-4 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-2 lg:gap-12 items-center">
             {/* Heading (always first on mobile) */}
@@ -90,7 +70,13 @@ export default function LandingAbout() {
               <div className="absolute -bottom-2 -left-2 w-12 h-12 sm:w-20 sm:h-20 bg-blue-500/20 rounded-full blur-xl"></div>
             </div>
             {/* Left Content (desktop: heading, then content; mobile: only content) */}
-            <div className="space-y-4 md:space-y-6 mt-2 lg:mt-0 w-full animate-slidein">
+            <motion.div
+              className="space-y-4 md:space-y-6 mt-2 lg:mt-0 w-full"
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
+            >
               <div className="hidden lg:block">
                 <p className="text-[#215273] text-lg font-semibold md:text-xl mb-4 italic">About Us - Takeoff 2025</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#359D9E] mb-8 italic leading-tight">
@@ -118,10 +104,7 @@ export default function LandingAbout() {
                 </p>
                 <p>
                   Every session, visit, and interaction is tailored to cut through the noise and give you{" "}
-                  <span className="text-black font-semibold">
-                    actionable knowledge, strategic connections, and a clear pathway to launch in Dubai
-                  </span>
-                  .
+                  <span className="text-black font-semibold">actionable knowledge, strategic connections, and a clear pathway to launch in Dubai</span>.
                 </p>
               </div>
               <div className="flex flex-row items-center justify-start gap-2 mt-4">
@@ -132,7 +115,7 @@ export default function LandingAbout() {
                   <RxArrowTopRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
