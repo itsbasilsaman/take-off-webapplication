@@ -29,6 +29,7 @@ const leaders = [
     title: "CEO, FutureTech Global",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=400&h=500&facepad=2",
   },
+  
 ]
 
 export default function LandingChiefGusts() {

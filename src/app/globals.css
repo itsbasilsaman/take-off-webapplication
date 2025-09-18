@@ -1,3 +1,13 @@
+/* Feature card fade-in from bottom */
+@keyframes feature-fadein-bottom {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.feature-card {
+  opacity: 0;
+  animation: feature-fadein-bottom 0.7s ease-in forwards;
+}
 
 @import "tailwindcss";
 

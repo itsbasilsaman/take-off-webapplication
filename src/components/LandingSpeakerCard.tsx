@@ -50,6 +50,12 @@ const speakers = [
     title: "Co-founder, Takeoff",
     image: "/shafeer.jpg",
   },
+  {
+    id: 8,
+   name: "Joe Jacod",
+    title: "Founder of ABC Group",
+    image: "/speaker-1.jpg",
+  },
 ]
 
 

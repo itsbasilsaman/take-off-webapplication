@@ -1,7 +1,8 @@
 "use client"
 
 // import { HiLocationMarker, HiCalendar  } from "react-icons/hi"
-import {     FaGlobe } from "react-icons/fa"
+import { FaGlobe } from "react-icons/fa"
+import { BsWhatsapp } from "react-icons/bs"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { RxArrowTopRight } from "react-icons/rx";
@@ -71,7 +72,10 @@ export default function HomeBanner() {
             <img src="/white-icon.png" alt="Takeoff Logo" className="w-20   mb-2 animate-fade-in-up" />
             <span className="text-[#C09755] text-lg md:text-2xl font-bold tracking-widest animate-fade-in-up">Takeoff Business Conclave</span>
             <span className="text-white text-2xl md:text-5xl font-serif italic font-semibold animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif'}}>
-              &amp; Expedition to Explore Dubai
+              &amp;  
+            </span>
+             <span className="text-white text-2xl md:text-5xl font-serif italic font-semibold animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif'}}>
+              Expedition to Explore Dubai
             </span>
             <span className="mt-4 animate-fade-in-up">
               <span className="inline-block w-8 h-8 border-4 border-white border-t-[#C09755] rounded-full animate-spin"></span>
@@ -93,7 +97,7 @@ export default function HomeBanner() {
       </div>
 
   {/* Main Content */}
-  <div className={`relative z-10 w-full flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-24 pt-16 sm:pt-0 transition-opacity duration-700 ${isVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0'}`}>
+  <div className={`relative z-10 w-full flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-24 pt-8 sm:pt-0 transition-opacity duration-700 ${isVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0'}`}>
   <div className="w-full max-w-[915px] flex flex-col items-start justify-center text-left" style={{   marginTop: '6vh' }}>
           <p className="text-[#C09755] text-lg font-semibold md:text-xl   mb-2 tracking-widest   animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             Where Founders Grow Together
@@ -196,6 +200,20 @@ export default function HomeBanner() {
           </div>
         </div>
       </div>
-    </div>
+    {/* Fixed WhatsApp Icon Button */}
+    <button
+      type="button"
+      onClick={() => {
+        const phone = '919207078555';
+        const url = `https://wa.me/${phone}`;
+        window.open(url, '_blank');
+      }}
+      className="fixed right-6 bottom-8 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all duration-200"
+      style={{ boxShadow: '0 4px 24px 0 rgba(37,211,102,0.25)' }}
+      aria-label="Chat on WhatsApp"
+    >
+      <BsWhatsapp className="text-4xl" />
+    </button>
+  </div>
   )
 }

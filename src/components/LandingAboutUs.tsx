@@ -108,16 +108,17 @@ export default function LandingAbout() {
                 </p>
               </div>
               <div className="flex flex-row items-center justify-start gap-2 mt-4">
-               <button
+               <a
+                  href="/Takeoff-4-Days-Program-summary.pdf"
+                  download
                   className="flex items-center justify-between bg-[#215273] hover:bg-[#215273] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
                   style={{minWidth:'190px'}}
-                  
-                >
-                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-3">Learn More</span>
+               >
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-3">Download Brochure</span>
                   <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
                     <RxArrowTopRight className="text-[22px] text-[#215273] group-hover:translate-x-1 transition-transform duration-200" />
                   </span>
-                </button>
+                </a>
               </div>
             </motion.div>
           </div>

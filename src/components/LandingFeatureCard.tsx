@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+// Removed framer-motion for simple CSS animation
 import { FiTarget, FiZap, FiUsers, FiAward, FiMapPin, FiGlobe } from "react-icons/fi"
 
 interface FeatureCard {
@@ -67,14 +67,11 @@ export default function LandingFeatureCards() {
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature) => (
-            <motion.div
+            <div
               key={feature.id}
-              className={`relative bg-white rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-100`}
-              style={{ willChange: 'transform' }}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              className={
+                `feature-card relative bg-white rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-100`
+              }
             >
               {/* Icon */}
               <div className="w-14 h-14 flex items-center justify-center rounded-full mb-5 bg-[#28587B]">
@@ -86,7 +83,7 @@ export default function LandingFeatureCards() {
               <div className="w-16 h-px bg-gray-300 mx-auto mb-3" />
               {/* Description */}
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{feature.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
