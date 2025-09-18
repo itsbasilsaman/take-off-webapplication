@@ -53,13 +53,16 @@ export default function HomeBanner() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Custom sequence: 0-1-2-1-0-1-2-1-0...
+  const slideSequence = [0, 1, 2, 1];
+  const [sequenceIndex, setSequenceIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % 3)
-    }, 3000)
-
-    return () => clearInterval(interval)
-  }, [])
+      setSequenceIndex((prev) => (prev + 1) % slideSequence.length);
+      setActiveSlide(slideSequence[(sequenceIndex + 1) % slideSequence.length]);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [sequenceIndex]);
 
   
 
@@ -83,15 +86,40 @@ export default function HomeBanner() {
           </div>
         </div>
       )}
-      {/* Background Image with Overlay and Blended Business People */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/main-banner.jpg"
-          alt="Dubai cityscape"
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* Animated Sliding Banner Images */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div
+          className="w-full h-full flex transition-transform duration-700"
+          style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+        >
+          <div className="w-full h-full relative shrink-0">
+            <Image
+              src="/main-banner.jpg"
+              alt="Dubai cityscape"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="w-full h-full relative shrink-0">
+            <Image
+              src="/banner-2.jpg"
+              alt="Business professionals"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="w-full h-full relative shrink-0">
+            <Image
+              src="/banner-3.jpg"
+              alt="Event audience"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
         {/* Black shade overlay */}
         <div className="absolute inset-0 bg-black/80 bg-opacity-60 pointer-events-none" />
       </div>
@@ -134,9 +162,12 @@ export default function HomeBanner() {
   <div className="hidden md:flex w-full flex-row items-end justify-between absolute left-0 right-0 bottom-0 z-30 px-2 animate-fade-in-up" style={{animationDelay: '1s'}}>
           {/* Dots for slider (optional) */}
           <div className="flex gap-6 mb-8 md:mb-10 lg:mb-12 ml-24">
-            <span className="w-3 h-3 rounded-full bg-white/80" />
-            <span className="w-3 h-3 rounded-full bg-white/40" />
-            <span className="w-3 h-3 rounded-full bg-white/40" />
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${activeSlide === i ? 'bg-white/80 scale-110' : 'bg-white/40 scale-100'}`}
+              />
+            ))}
           </div>
           {/* Countdown Section */}
           <div className="bg-[#215273] rounded-t-2xl shadow-2xl px-8 py-6 md:py-12 flex flex-col md:flex-row items-center md:items-end gap-6 md:gap-0 md:w-[700px] lg:w-[900px] mr-0 ml-auto">
@@ -200,20 +231,7 @@ export default function HomeBanner() {
           </div>
         </div>
       </div>
-    {/* Fixed WhatsApp Icon Button */}
-    <button
-      type="button"
-      onClick={() => {
-        const phone = '919207078555';
-        const url = `https://wa.me/${phone}`;
-        window.open(url, '_blank');
-      }}
-      className="fixed right-6 bottom-8 z-50 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all duration-200"
-      style={{ boxShadow: '0 4px 24px 0 rgba(37,211,102,0.25)' }}
-      aria-label="Chat on WhatsApp"
-    >
-      <BsWhatsapp className="text-4xl" />
-    </button>
+    
   </div>
   )
 }
