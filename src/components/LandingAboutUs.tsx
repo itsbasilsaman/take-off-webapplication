@@ -108,12 +108,16 @@ export default function LandingAbout() {
                 </p>
               </div>
               <div className="flex flex-row items-center justify-start gap-2 mt-4">
-                <button className="group bg-[#215273] hover:bg-[#173c54] text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl flex items-center gap-2 md:gap-3 focus:outline-none focus:ring-2 focus:ring-[#359D9E] animate-pop">
-                  Learn more
+               <button
+                  className="flex items-center justify-between bg-[#215273] hover:bg-[#215273] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                  style={{minWidth:'210px'}}
+                  
+                >
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-7">Learn More</span>
+                  <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+                    <RxArrowTopRight className="text-[22px] text-[#215273] group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
                 </button>
-                <div className="text-[#215273] border border-[#215273] p-2 rounded-full transition-colors ml-2 group-hover:bg-[#19415c] group-hover:scale-110 group-hover:shadow-lg duration-300 ease-in-out">
-                  <RxArrowTopRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
-                </div>
               </div>
             </motion.div>
           </div>
@@ -121,37 +125,49 @@ export default function LandingAbout() {
       </div>
 
       {/* Slanted Animated Ticker Bar */}
-      <div className="absolute left-1/2 bottom-[-20px] sm:bottom-28 transform -translate-x-1/2 w-full  pointer-events-none select-none z-20 animate-slidein  ">
-        <div
-          className="relative w-full h-14 md:h-20 overflow-hidden  "
-          style={{
-            transform: 'skewY(-4deg)',
-            background: '#2ca3a3',
-            boxShadow: '0 2px 8px 0 rgba(44,163,163,0.08)',
-          }}
+    <div className="absolute left-1/2 bottom-[-20px] sm:bottom-28 transform -translate-x-1/2 w-full pointer-events-none select-none z-20 animate-slidein">
+  <div
+    className="relative w-full h-14 md:h-20 overflow-hidden"
+    style={{
+      transform: 'skewY(-4deg)',
+      background: '#2ca3a3',
+      boxShadow: '0 2px 8px 0 rgba(44,163,163,0.08)',
+    }}
+  >
+    <div className="absolute inset-0 flex items-center">
+      <div
+        className="whitespace-nowrap flex animate-ticker"
+        style={{ animation: 'ticker-left-right 12s linear infinite' }}
+      >
+        <span
+          className="text-white font-bold italic text-sm md:text-[24px] px-4"
+          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
         >
-          <div className="absolute inset-0 flex items-center">
-            <div
-              className="whitespace-nowrap flex animate-ticker"
-              style={{ animation: 'ticker-left-right 12s linear infinite' }}
-            >
-              <span className="text-white font-semibold italic text-sm md:text-[20px] px-4">
-                EARLY BIRD REGISTRATION CLOSING SOON!
-              </span>
-              <span className="text-white font-semibold italic text-sm md:text-[20px] px-4">
-                20+ GLOBAL SPEAKERS CONFIRMED
-              </span>
-              {/* Repeat for seamless loop */}
-              <span className="text-white font-semibold italic text-sm md:text-[20px] px-4">
-                EARLY BIRD REGISTRATION CLOSING SOON!
-              </span>
-              <span className="text-white font-semibold italic text-sm md:text-[20px] px-4">
-                20+ GLOBAL SPEAKERS CONFIRMED
-              </span>
-            </div>
-          </div>
-        </div>
+          EARLY BIRD REGISTRATION CLOSING SOON!
+        </span>
+        <span
+          className="text-white font-bold italic text-sm md:text-[24px] px-4"
+          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
+        >
+          20+ GLOBAL SPEAKERS CONFIRMED
+        </span>
+        {/* Repeat for seamless loop */}
+        <span
+          className="text-white font-bold italic text-sm md:text-[24px] px-4"
+          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
+        >
+          EARLY BIRD REGISTRATION CLOSING SOON!
+        </span>
+        <span
+          className="text-white font-bold italic text-sm md:text-[24px] px-4"
+          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
+        >
+          20+ GLOBAL SPEAKERS CONFIRMED
+        </span>
       </div>
+    </div>
+  </div>
+</div>
     </div>
   )
 }

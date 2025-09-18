@@ -18,6 +18,13 @@ export default function HomeBanner() {
     seconds: 2,
   })
 
+   const handleWhatsAppClick = () => {
+    const phone = '919207078555'; // WhatsApp number (without + and spaces)
+    const message = encodeURIComponent('Hello, I am interested in your services.');
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, '_blank');
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -75,15 +82,14 @@ export default function HomeBanner() {
       {/* Background Image with Overlay and Blended Business People */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/dubai-cityscape.png"
+          src="/main-banner.jpg"
           alt="Dubai cityscape"
           fill
           className="object-cover"
           priority
         />
-        {/* Blended business people overlay */}
-        
-        <div  />
+        {/* Black shade overlay */}
+        <div className="absolute inset-0 bg-black/40 bg-opacity-60 pointer-events-none" />
       </div>
 
   {/* Main Content */}
@@ -107,42 +113,15 @@ export default function HomeBanner() {
           </div>
          <div className="flex items-center gap-2 justify-start animate-fade-in-up" style={{animationDelay: '0.8s'}}>
             <button
-              className="bg-[#C09755] text-white rounded-full px-8 py-3 text-base font-semibold shadow-lg transition-all duration-300 group inline-flex items-center hover:bg-[#785419] hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#C09755] cursor-pointer"
-              style={{
-                boxShadow: '0 4px 24px 0 rgba(192,151,85,0.15)',
-                transition: 'transform 0.2s, box-shadow 0.2s',
-                cursor: 'pointer',
-              }}
-              onMouseDown={e => e.currentTarget.classList.add('scale-95')}
-              onMouseUp={e => e.currentTarget.classList.remove('scale-95')}
-              onClick={() => {
-                const phone = '919207078555';
-                const message = encodeURIComponent('Hello! I am interested in registering for the Takeoff Business Conclave & Expedition to Explore Dubai.');
-                window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-              }}
-            >
-              Register Now
-            </button>
-            <span
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-white transition-colors duration-200 cursor-pointer
-                hover:bg-[#FFC107] active:scale-90"
-              style={{ transition: 'background 0.2s, transform 0.2s' }}
-              tabIndex={0}
-              onMouseDown={e => e.currentTarget.classList.add('scale-90')}
-              onMouseUp={e => e.currentTarget.classList.remove('scale-90')}
-              onKeyDown={e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.currentTarget.classList.add('scale-90');
-                }
-              }}
-              onKeyUp={e => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.currentTarget.classList.remove('scale-90');
-                }
-              }}
-            >
-              <RxArrowTopRight className="h-6 w-6 text-white group-hover:text-[#222] transition-colors duration-200" />
-            </span>
+                  className="flex items-center bg-[#C09755] hover:bg-[#865f21] rounded-full px-3 py-2 pr-1 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                  style={{minWidth:'210px'}}
+                  onClick={handleWhatsAppClick}
+                >
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-6">Register Now</span>
+                  <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+                    <RxArrowTopRight className="text-[22px] text-[#C09755] group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </button>
          </div>
         </div>
 

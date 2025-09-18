@@ -10,6 +10,15 @@ import { useInView } from "framer-motion";
 import { RxArrowTopRight } from "react-icons/rx";
 
 export default function TestimonialsSection() {
+
+
+   const handleWhatsAppClick = () => {
+    const phone = '919207078555'; // WhatsApp number (without + and spaces)
+    const message = encodeURIComponent('Hello, I am interested in your services.');
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, '_blank');
+  };
+
   // Removed unused hover state
 
   // Animation controls and refs for testimonial card
@@ -45,7 +54,7 @@ export default function TestimonialsSection() {
         ref={testimonialRef}
       >
         <p className="text-sm font-medium text-gray-600 mb-2 tracking-wide uppercase italic " style={{ fontFamily: 'var(--font-dm-serif-display)' }}>Testimonials</p>
-        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#359D9E] text-balance italic">
+        <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-[#008373] text-balance italic">
           What Our Community Says
         </h2>
       </motion.div>
@@ -108,7 +117,7 @@ export default function TestimonialsSection() {
       {/* Call to Action Section */}
       <motion.div
         ref={ctaRef}
-        className="bg-gradient-to-r from-[#359D9E] to-[#04695d] rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xl"
+        className="bg-[#008373]  rounded-2xl p-6 sm:p-8 lg:p-10 shadow-xl"
         initial="hidden"
         animate={ctaControls}
         variants={{
@@ -134,20 +143,16 @@ export default function TestimonialsSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-row gap-2 lg:gap-4 justify-center lg:justify-start">
-                <button
-                  className="group bg-[#215273] hover:bg-[#173c54] text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl flex items-center gap-2 md:gap-3 focus:outline-none focus:ring-2 focus:ring-[#359D9E] animate-pop cursor-pointer"
-                  style={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    const phone = '919207078555';
-                    const message = encodeURIComponent('Hello! I am interested in registering for the Takeoff Business Conclave & Expedition to Explore Dubai.');
-                    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-                  }}
+               <button
+                  className="flex items-center bg-[#215273] hover:bg-[#215273] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                  style={{minWidth:'210px'}}
+                  onClick={handleWhatsAppClick}
                 >
-                  Register Now
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-6">Register Now</span>
+                  <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+                    <RxArrowTopRight className="text-[22px] text-[#215273] group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
                 </button>
-                <div className="text-white border border-white p-2 rounded-full transition-colors ml-2 group-hover:bg-[#19415c] group-hover:scale-110 group-hover:shadow-lg duration-300 ease-in-out">
-                  <RxArrowTopRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
-                </div>
             </div>
           </motion.div>
 

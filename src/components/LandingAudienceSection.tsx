@@ -3,11 +3,20 @@
 import { useState, useEffect } from "react"
 import { FiChevronRight } from "react-icons/fi"
 import { motion } from "framer-motion"
+import { RxArrowTopRight } from "react-icons/rx";
 
 export default function AudienceSection() {
   // Remove hoveredItem, only use openItem for toggling
   const [openItem, setOpenItem] = useState<number | null>(null)
   const [isMobile, setIsMobile] = useState(false)
+
+
+  const handleWhatsAppClick = () => {
+    const phone = '919207078555'; // WhatsApp number (without + and spaces)
+    const message = encodeURIComponent('Hello, I am interested in your services.');
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, '_blank');
+  };
   // Mobile fade-in effect when entering page or scrolling 10%
   useEffect(() => {
     const checkMobile = () => {
@@ -120,10 +129,16 @@ export default function AudienceSection() {
           </div>
           {/* Call to Action */}
           <motion.div className="mt-8 pt-6 border-t border-gray-100" variants={fadeUp}>
-            <button className="group inline-flex items-center space-x-2 bg-[#29516a] hover:bg-[#1d384a] text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:transform hover:-translate-y-0.5 italic">
-              <span>Join the Event</span>
-              <FiChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
+           <button
+                  className="flex items-center bg-[#359D9E] hover:bg-[#235c5d] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                  style={{minWidth:'210px'}}
+                  onClick={handleWhatsAppClick}
+                >
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-5">Join the Event</span>
+                  <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+                    <RxArrowTopRight className="text-[22px] text-[#359D9E] group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </button>
           </motion.div>
   </motion.div>
       ) : (
@@ -184,9 +199,15 @@ export default function AudienceSection() {
               </div>
               {/* Call to Action */}
               <motion.div className="mt-8 pt-6 border-t border-gray-100" variants={fadeUp}>
-                <button className="group inline-flex items-center space-x-2 bg-[#29516a] hover:bg-[#1d384a] text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:transform hover:-translate-y-0.5 italic">
-                  <span>Join the Event</span>
-                  <FiChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                <button
+                  className="flex items-center bg-[#359D9E] hover:bg-[#235c5d] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                  style={{minWidth:'210px'}}
+                  onClick={handleWhatsAppClick}
+                >
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-5">Join the Event</span>
+                  <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+                    <RxArrowTopRight className="text-[22px] text-[#359D9E] group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
                 </button>
               </motion.div>
             </div>

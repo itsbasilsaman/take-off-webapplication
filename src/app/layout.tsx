@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   title: "Take Off Website",
   description: "Take Off - Elevate your business with our creative solutions.",
   icons: {
-    icon: "/white-icon.png"
+    icon: "/take-off.png"
   }
 };
 

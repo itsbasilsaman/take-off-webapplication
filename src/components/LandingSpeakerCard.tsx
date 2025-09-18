@@ -10,53 +10,48 @@ import { motion } from "framer-motion";
 const speakers = [
   {
     id: 1,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Dr. Rashid Gazzali",
+    title: "International Trainer, Corporate Consultant",
+    image: "/gazzali.jpg",
   },
   {
     id: 2,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Ms. Sahla Parveen",
+    title: "Entrepreneur, Author, Educationalist",
+    image: "/sahla.jpg",
   },
   {
     id: 3,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Mr. PV Muinuddeen",
+    title: "MD, Tahfeel Group",
+    image: "/muinudheen.jpg",
   },
   {
     id: 4,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Mr. Manshad Bin Mohammed",
+    title: "Traveller, Story Teller",
+    image: "/manshad.jpg",
   },
   {
     id: 5,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Dr. Najeeb Ahammad",
+    title: "Functional Medicine Expert, Corporate Wellness Trainer",
+    image: "/najeeb.jpg",
   },
   {
     id: 6,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Dr. Anvar Ameen Chelat",
+    title: "The Managing Director Of Regency Group",
+    image: "/anwar-ameen.jpg",
   },
   {
     id: 7,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1519340333755-c2f6c58f5c4b?auto=format&fit=facearea&w=400&h=500&facepad=2",
-  },
-  {
-    id: 8,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Mr. Muhammed Shafeer",
+    title: "Co-founder, Takeoff",
+    image: "/shafeer.jpg",
   },
 ]
+
 
 export default function Home() {
   return (
@@ -130,23 +125,19 @@ export default function Home() {
                 <div
                   className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[3/4] mb-4"
                 >
-                  <motion.img
+                  <img
                     src={speaker.image || "/placeholder.svg"}
                     alt={speaker.name}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.08 }}
-                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="w-full h-full object-cover transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 p-4"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 p-4 opacity-0 animate-fadein"
+                    style={{ animationFillMode: 'forwards', animationDuration: '0.6s' }}
                   >
                     <h3 className="text-white font-semibold text-base mb-1 leading-tight italic">{speaker.name}</h3>
                     <p className="text-white/90 text-xs font-normal">{speaker.title}</p>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -154,19 +145,16 @@ export default function Home() {
         </div>
 
         <div className="flex justify-center items-center gap-2 lg:justify-end max-w-7xl mx-auto">
-          <button
-            className="group bg-[#215273] hover:bg-[#1b2e3a] active:scale-95 text-white px-6 md:px-8 py-3 md:py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 flex items-center gap-2 md:gap-3 shadow-lg hover:shadow-xl focus:outline-none cursor-pointer"
-            style={{ height: '48px' }}
-          >
-            View all Speakers
-          </button>
-
-          <div
-            className="flex items-center justify-center border-[#215273] border p-3 rounded-full bg-white transition-all duration-300 text-[#215273] hover:bg-[#215273] hover:text-white active:scale-95 cursor-pointer"
-            style={{ height: '48px', width: '48px' }}
-          >
-            <RxArrowTopRight className="transition-transform duration-300 w-full h-full   group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </div>
+         <button
+                  className="flex items-center bg-[#215273] hover:bg-[#235c5d] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                  style={{minWidth:'210px'}}
+               
+                >
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-5">View All Speakers</span>
+                  <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+                    <RxArrowTopRight className="text-[22px] text-[#215273] group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </button>
         </div>
       </div>
     </div>

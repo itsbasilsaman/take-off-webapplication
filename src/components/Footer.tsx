@@ -27,7 +27,7 @@ export default function Footer() {
  
 
   return (
-    <footer className="bg-black text-white pt-8 pb-4 px-2 sm:px-8">
+    <footer className="bg-black text-white pt-8 pb-4 px-2 sm:px-8 overflow-x-hidden">
       {/* Top WhatsApp and Search Bar Section */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pb-4 border-b border-gray-700">
         <div className="flex items-center gap-2">

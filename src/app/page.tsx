@@ -14,15 +14,30 @@ import TestimonialsSection from "@/components/LandingTestimonialSection";
 export default function Home() {
   return (
     <>
-     <HomeBanner/>
-     <LandingAbout/>
-     <LandingFeatureCards/>
-     <LandingChiefGusts/>
-   
-     <SpeakersSection/>
-     <AudienceSection/>
-     <WhatIsIncluded/>
-     <TestimonialsSection/>
+      <section id="home">
+        <HomeBanner/>
+      </section>
+      <section id="about">
+        <LandingAbout/>
+      </section>
+      <section id="feature-cards">
+        <LandingFeatureCards/>
+      </section>
+      <section id="chief-guests">
+        <LandingChiefGusts/>
+      </section>
+      <section id="speakers">
+        <SpeakersSection/>
+      </section>
+      <section id="audience">
+        <AudienceSection/>
+      </section>
+      <section id="included">
+        <WhatIsIncluded/>
+      </section>
+      <section id="testimonials">
+        <TestimonialsSection/>
+      </section>
     </>
   );
 }
