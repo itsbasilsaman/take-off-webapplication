@@ -89,7 +89,7 @@ export default function HomeBanner() {
           priority
         />
         {/* Black shade overlay */}
-        <div className="absolute inset-0 bg-black/40 bg-opacity-60 pointer-events-none" />
+        <div className="absolute inset-0 bg-black/80 bg-opacity-60 pointer-events-none" />
       </div>
 
   {/* Main Content */}

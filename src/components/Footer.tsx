@@ -38,7 +38,7 @@ export default function Footer() {
       {/* Top WhatsApp and Search Bar Section */}
       <div className="flex flex-col lg:flex-row items-center justify-between gap-4 pb-4 border-b border-gray-700">
         <div className="flex items-center gap-2">
-          <span className="text-[#23b3a3] text-2xl font-semibold italic">Connect WhatsApp</span>
+          <span className="text-[#23b3a3] text-2xl font-semibold  ">Connect WhatsApp</span>
           <BsWhatsapp className="text-[#23b3a3] text-2xl" />
         
           </div>

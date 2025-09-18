@@ -165,7 +165,7 @@ export default function TestimonialsSection() {
             animate={ctaInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
-            <h3 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-4 italic text-balance max-w-2xl">
+            <h3 className="text-[24px] md:text-5xl lg:text-6xl  font-medium text-white mb-4 italic text-balance max-w-2xl">
               Don&lsquo;t Miss the Journey
               <br />
               That Could Change Your Business Future
