@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import { MdChevronRight } from "react-icons/md"
+import { motion } from "framer-motion"
 
 const leaders = [
   {
@@ -69,22 +70,31 @@ export default function LandingChiefGusts() {
           {/* Desktop Grid */}
           <div className="hidden md:grid md:grid-cols-4 gap-6 lg:gap-6">
             {leaders.map((leader) => (
-              <div key={leader.id} className="group cursor-pointer">
+              <motion.div
+                key={leader.id}
+                className="group cursor-pointer"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+              >
                 <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[3/4] mb-4" style={{clipPath: 'polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)'}}>
-                  <img
+                  <motion.img
                     src={leader.image || "/placeholder.svg"}
                     alt={leader.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3, ease: 'easeOut' }}
                   />
                   <div className="absolute bottom-0 left-0 right-0  p-6">
                     <div className="absolute inset-0 "></div>
                     <div className="relative z-10">
-                      <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg">{leader.name}</h3>
-                      <p className="text-white text-sm drop-shadow-lg">{leader.title}</p>
+                      <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-125 group-hover:drop-shadow-2xl">{leader.name}</h3>
+                      <p className="text-white text-sm drop-shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-125 group-hover:drop-shadow-2xl">{leader.title}</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
@@ -92,22 +102,37 @@ export default function LandingChiefGusts() {
           <div className="md:hidden">
             <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
               {leaders.map((leader) => (
-                <div key={leader.id} className="flex-none w-64 snap-start">
+                <motion.div
+                  key={leader.id}
+                  className="flex-none w-64 snap-start"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, ease: 'easeOut' }}
+                >
                   <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[3/4] mb-4" style={{clipPath: 'polygon(0 0, 85% 0, 100% 15%, 100% 100%, 0 100%)'}}>
-                    <img
+                    <motion.img
                       src={leader.image || "/placeholder.svg"}
                       alt={leader.name}
                       className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3, ease: 'easeOut' }}
                     />
                     <div className="absolute bottom-0 left-0 right-0 bg-transparent   p-4">
                       <div className="absolute inset-0  "></div>
-                      <div className="relative z-10">
-                        <h3 className="text-white font-semibold text-base mb-1 drop-shadow-lg">{leader.name}</h3>
-                        <p className="text-white text-sm drop-shadow-lg">{leader.title}</p>
-                      </div>
+                      <motion.div
+                        className="relative z-10"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.7 }}
+                        transition={{ duration: 0.5, ease: 'easeOut' }}
+                      >
+                        <h3 className="text-white font-semibold text-base mb-1 drop-shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-125 group-hover:drop-shadow-2xl">{leader.name}</h3>
+                        <p className="text-white text-sm drop-shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-125 group-hover:drop-shadow-2xl">{leader.title}</p>
+                      </motion.div>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>

@@ -66,22 +66,22 @@ export default function LandingFeatureCards() {
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feature, i) => (
+          {features.map((feature) => (
             <motion.div
               key={feature.id}
-              className={`relative bg-white rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center shadow-md transition-all duration-300 ${i === 0 ? 'bg-[#e6f3fb]' : ''} hover:scale-105 hover:shadow-2xl active:scale-100`}
+              className={`relative bg-white rounded-2xl p-7 sm:p-8 flex flex-col items-center text-center shadow-md transition-all duration-300 hover:scale-105 hover:shadow-2xl active:scale-100`}
               style={{ willChange: 'transform' }}
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.7, ease: 'easeOut', delay: i * 0.15 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
             >
               {/* Icon */}
-              <div className={`w-14 h-14 flex items-center justify-center rounded-full mb-5 ${ 'bg-[#28587B]'}`}>
-                <span className={`   'text-white'}`}>{feature.icon}</span>
+              <div className="w-14 h-14 flex items-center justify-center rounded-full mb-5 bg-[#28587B]">
+                <span className="text-white">{feature.icon}</span>
               </div>
               {/* Title */}
-              <h3 className={`text-lg sm:text-xl md:text-2xl font-bold italic mb-2 leading-snug ${i === 0 ? 'text-[#28587B]' : 'text-[#28587B]'}`}>{feature.title}</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold italic mb-2 leading-snug text-[#28587B]">{feature.title}</h3>
               {/* Divider */}
               <div className="w-16 h-px bg-gray-300 mx-auto mb-3" />
               {/* Description */}

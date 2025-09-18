@@ -92,7 +92,7 @@ export default function HomeBanner() {
           <p className="text-[#C09755] text-[14px] md:text-lg font-medium mb-2 tracking-widest uppercase animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             WHERE FOUNDERS GROW TOGETHER
           </p>
-          <h1 className="text-white text-[28px] md:text-5xl lg:text-6xl font-serif italic font-semibold leading-snug mb-6 sm:mb-12 animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3, animationDelay: '0.4s'}}>
+          <h1 className="text-white text-[24px] md:text-5xl lg:text-6xl font-serif italic font-medium leading-snug mb-6 sm:mb-12 animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3, animationDelay: '0.4s'}}>
             Takeoff Business Conclave &<br />Expedition to Explore Dubai
           </h1>
           <div className="flex flex-col items-start gap-3 mb-8 animate-fade-in-up" style={{animationDelay: '0.6s'}}>

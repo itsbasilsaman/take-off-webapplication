@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import {  Montserrat, DM_Serif_Display } from "next/font/google";
+import { DM_Serif_Display } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -7,10 +8,31 @@ import Footer from "@/components/Footer";
 
  
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+
+const wantedSans = localFont({
+  src: [
+    {
+      path: "../../public/fonts/WantedSans-Regular-BF65baf13579965.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/WantedSans-Medium-BF65baf1388963b.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/WantedSans-SemiBold-BF65baf13722853.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/WantedSans-Bold-BF65baf135d5a25.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-wanted-sans",
   display: "swap",
 });
 
@@ -37,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`  ${montserrat.variable} ${dmSerif.variable} antialiased relative`}
+        className={`  ${wantedSans.variable} ${dmSerif.variable} antialiased relative`}
       >
         <Header/>
         {children}

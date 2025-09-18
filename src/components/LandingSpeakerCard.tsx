@@ -1,7 +1,10 @@
- 
+/* eslint-disable @typescript-eslint/no-explicit-any */
+ "use client"
+
 
 import { FiArrowRight } from "react-icons/fi"
 import { RxArrowTopRight } from "react-icons/rx";
+import { motion } from "framer-motion";
 
 
 const speakers = [
@@ -115,22 +118,35 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Mobile Carousel */}
+
+        {/* Mobile Carousel with Framer Motion animation */}
         <div className="md:hidden mb-8 max-w-7xl mx-auto">
           <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
             {speakers.map((speaker) => (
-              <div key={speaker.id} className="flex-none w-64 snap-start">
-                <div className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[3/4] mb-4">
-                  <img
+              <div
+                key={speaker.id}
+                className="flex-none w-64 snap-start"
+              >
+                <div
+                  className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[3/4] mb-4"
+                >
+                  <motion.img
                     src={speaker.image || "/placeholder.svg"}
                     alt={speaker.name}
                     className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <motion.div
+                    className="absolute bottom-0 left-0 right-0 p-4"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+                  >
                     <h3 className="text-white font-semibold text-base mb-1 leading-tight italic">{speaker.name}</h3>
                     <p className="text-white/90 text-xs font-normal">{speaker.title}</p>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             ))}
