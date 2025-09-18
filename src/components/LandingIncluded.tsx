@@ -37,7 +37,7 @@ export default function WhatIsIncluded() {
       
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-16 py-16 lg:py-24 animate-fadein">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#359D9E] italic font-serif text-center mb-10 sm:mb-16">What is included?</h2>
+        <h2 className="text-[24px] md:text-5xl lg:text-6xl  font-medium text-[#359D9E] italic font-serif text-center mb-10 sm:mb-16">What is included?</h2>
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Images: stacked for mobile/tablet, original overlap for desktop */}
           <div className="w-full mb-8 lg:mb-0 order-1 lg:order-2">

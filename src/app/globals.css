@@ -96,6 +96,8 @@ h1, h2, h3, h4, h5, h6,
 .main-heading,
 .main-text {
   font-family: var(--font-dm-serif-display), serif;
+   font-style: italic;
+  font-weight: 400;
 }
 
 

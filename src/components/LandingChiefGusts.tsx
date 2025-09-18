@@ -60,8 +60,8 @@ export default function LandingChiefGusts() {
         `}
       >
         <div className="mb-12">
-          <p className="text-sm text-black mb-4 font-medium">Our Chief Guests</p>
-          <h2 className="text-4xl md:text-[52px]   font-serif italic text-[#C09755] leading-tight text-balance">
+          <p className="text-lg font-semibold md:text-xl text-black mb-4  ">Our Chief Guests</p>
+          <h2 className="text-[24px] md:text-5xl lg:text-6xl  font-medium  text-[#C09755] leading-tight text-balance">
             Honoring the leaders who inspire change and growth.
           </h2>
         </div>

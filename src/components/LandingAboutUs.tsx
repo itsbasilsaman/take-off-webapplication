@@ -48,8 +48,8 @@ export default function LandingAbout() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-2 lg:gap-12 items-center">
             {/* Heading (always first on mobile) */}
             <div className="block lg:hidden w-full mb-4">
-              <p className="text-[#215273] text-lg font-semibold md:text-xl mb-2 italic">About Us - Takeoff 2025</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#359D9E] mb-4 italic leading-tight">
+              <p className="text-[#215273] text-lg font-semibold md:text-xl mb-2  ">About Us - Takeoff 2025</p>
+              <h2 className="text-[24px] md:text-5xl lg:text-6xl  font-medium  text-[#359D9E] mb-4 italic leading-tight">
                 From Vision to Venture
               </h2>
             </div>
@@ -78,7 +78,7 @@ export default function LandingAbout() {
               transition={{ duration: 0.7, ease: 'easeOut' }}
             >
               <div className="hidden lg:block">
-                <p className="text-[#215273] text-lg font-semibold md:text-xl mb-4 italic">About Us - Takeoff 2025</p>
+                <p className="text-[#215273] text-lg font-semibold md:text-xl mb-4  ">About Us - Takeoff 2025</p>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#359D9E] mb-8 italic leading-tight">
                   From Vision to Venture
                 </h2>
@@ -110,10 +110,10 @@ export default function LandingAbout() {
               <div className="flex flex-row items-center justify-start gap-2 mt-4">
                <button
                   className="flex items-center justify-between bg-[#215273] hover:bg-[#215273] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
-                  style={{minWidth:'210px'}}
+                  style={{minWidth:'190px'}}
                   
                 >
-                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-7">Learn More</span>
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-3">Learn More</span>
                   <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
                     <RxArrowTopRight className="text-[22px] text-[#215273] group-hover:translate-x-1 transition-transform duration-200" />
                   </span>

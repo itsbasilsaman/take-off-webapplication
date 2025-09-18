@@ -40,6 +40,7 @@ const dmSerif = DM_Serif_Display({
   variable: "--font-dm-serif-display",
   subsets: ["latin"],
   weight: ["400"],
+  style: ["italic"], // <-- Add this line
   display: "swap",
 });
 

@@ -58,8 +58,8 @@ export default function LandingFeatureCards() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-14">
-          <p className="text-base sm:text-lg text-[#C09755] mb-2 font-medium italic">Why takeoff 2025</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold italic text-white mb-2">
+          <p className="text-lg font-semibold md:text-xl text-[#C09755] mb-2  ">Why takeoff 2025</p>
+          <h2 className="text-[24px] md:text-5xl lg:text-6xl  font-medium  italic text-white mb-2">
             Where founders <span className="block sm:inline">Grow Together</span>
           </h2>
         </div>

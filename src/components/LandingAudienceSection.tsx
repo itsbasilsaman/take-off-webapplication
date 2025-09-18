@@ -79,8 +79,8 @@ export default function AudienceSection() {
   <motion.div className="flex flex-col gap-6" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
           {/* Header First */}
           <motion.div className="space-y-3 mb-4" variants={fadeUp}>
-            <p className="text-sm font-medium text-gray-600 tracking-wide uppercase">Who Should Attend</p>
-            <h2 className="text-3xl font-bold text-[#29516a] leading-tight italic" style={{fontFamily: 'serif'}}>
+            <p className="text-lg font-semibold md:text-xl text-gray-600 tracking-wide  ">Who Should Attend</p>
+            <h2 className="text-[24px] md:text-5xl lg:text-6xl  font-medium  text-[#29516a] leading-tight italic" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3, animationDelay: '0.4s'}}  >
               The Audience of Tomorrow
             </h2>
           </motion.div>
@@ -164,10 +164,10 @@ export default function AudienceSection() {
             <div className="space-y-6">
               {/* Header */}
               <motion.div className="space-y-3" variants={fadeUp}>
-                <p className="text-sm font-medium text-gray-600 tracking-wide uppercase">Who Should Attend</p>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#29516a] leading-tight italic" style={{fontFamily: 'serif'}}>
-                  The Audience of Tomorrow
-                </h2>
+               <p className="text-lg font-semibold md:text-xl text-gray-600 tracking-wide  ">Who Should Attend</p>
+            <h2 className="text-[24px] md:text-5xl lg:text-6xl  font-medium  text-[#29516a] leading-tight italic" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3, animationDelay: '0.4s'}}  >
+              The Audience of Tomorrow
+            </h2>
               </motion.div>
               {/* Audience List */}
               <div className="space-y-2 mt-8">

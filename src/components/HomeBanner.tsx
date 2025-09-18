@@ -95,10 +95,10 @@ export default function HomeBanner() {
   {/* Main Content */}
   <div className={`relative z-10 w-full flex flex-col justify-center min-h-screen px-4 md:px-8 lg:px-24 pt-16 sm:pt-0 transition-opacity duration-700 ${isVisible ? 'opacity-100 animate-fade-in-up' : 'opacity-0'}`}>
   <div className="w-full max-w-[915px] flex flex-col items-start justify-center text-left" style={{   marginTop: '6vh' }}>
-          <p className="text-[#C09755] text-[14px] md:text-lg font-medium mb-2 tracking-widest uppercase animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            WHERE FOUNDERS GROW TOGETHER
+          <p className="text-[#C09755] text-lg font-semibold md:text-xl   mb-2 tracking-widest   animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            Where Founders Grow Together
           </p>
-          <h1 className="text-white text-[24px] md:text-5xl lg:text-6xl font-serif italic font-medium leading-snug mb-6 sm:mb-12 animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3, animationDelay: '0.4s'}}>
+          <h1 className="text-white text-[24px] md:text-5xl lg:text-6xl  font-medium  font-serif italicleading-snug mb-6 sm:mb-12 animate-fade-in-up" style={{fontFamily: 'var(--font-dm-serif-display), serif', lineHeight: 1.3, animationDelay: '0.4s'}}>
             Takeoff Business Conclave &<br />Expedition to Explore Dubai
           </h1>
           <div className="flex flex-col items-start gap-3 mb-8 animate-fade-in-up" style={{animationDelay: '0.6s'}}>

@@ -24,6 +24,13 @@ export default function Footer() {
     { name: "Contact Us", href: "#contact" },
   ]
 
+   const handleWhatsAppClick = () => {
+    const phone = '919207078555'; // WhatsApp number (without + and spaces)
+    const message = encodeURIComponent('Hello, I am interested in your services.');
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, '_blank');
+  };
+
  
 
   return (
@@ -44,18 +51,15 @@ export default function Footer() {
         </div>
         <div className="flex items-center gap-2">
             <button
-              className="group bg-[#359D9E] hover:bg-[#173c54] text-white px-6 py-2 rounded-full font-semibold text-base md:text-lg transition-all duration-300 transform hover:scale-110 hover:shadow-2xl flex items-center gap-2 md:gap-3 focus:outline-none focus:ring-2 focus:ring-[##359D9E] animate-pop"
-              onClick={() => {
-                const phone = '919207078555';
-                const message = encodeURIComponent('Hello, I am interested in Takeoff 2025!');
-                window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
-              }}
-            >
-              Connect Now
-            </button>
-            <div className="text-white border border-white p-2 rounded-full transition-colors ml-2 group-hover:bg-[#19415c] group-hover:scale-110 group-hover:shadow-lg duration-300 ease-in-out">
-              <RxArrowTopRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
-            </div>
+                  className="flex items-center bg-[#359D9E] hover:bg-[#235c5d] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
+                  style={{minWidth:'200px'}}
+                  onClick={handleWhatsAppClick}
+                >
+                  <span className="text-white text-lg font-normal tracking-wide pl-2 pr-5">Connect Now</span>
+                  <span className="flex items-center justify-center w-10 h-10 bg-white rounded-full">
+                    <RxArrowTopRight className="text-[22px] text-[#359D9E] group-hover:translate-x-1 transition-transform duration-200" />
+                  </span>
+                </button>
         </div>
       </div>
 
@@ -121,13 +125,13 @@ export default function Footer() {
         <div className="flex flex-col items-center md:items-end gap-6">
           <img src="/white-icon.png" alt="Take-Off Business Network" className="w-44 mb-2" />
           <span className="text-gray-300 text-base mb-2">Stay updated with Takeoff news and events.</span>
-          <form className="flex w-full max-w-xs gap-0 border-b border-gray-700 pb-2">
+          <form className="flex   gap-0 border-b border-gray-700 pb-2">
             <input
               type="email"
               placeholder="Enter your email"
               className="flex-1 px-4 py-2 rounded-l bg-black text-gray-200 placeholder:text-gray-400 border-none focus:outline-none"
             />
-            <button type="submit" className="bg-[#29516a] text-white px-6 py-2 rounded-r font-semibold">SUBMIT</button>
+            <button type="submit" className="bg-[#29516a] text-white px-6 py-2 rounded-lg font-semibold">SUBMIT</button>
           </form>
          <div className="flex gap-6 items-center">
             <span className="text-[#23b3a3] text-base font-semibold mt-2">FOLLOW US ON</span>
