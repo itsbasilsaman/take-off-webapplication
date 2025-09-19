@@ -93,14 +93,14 @@ export default function LandingAbout() {
                   As a growth-focused entrepreneur from Kerala, you already have the vision and drive. What you need is the right platform — one that equips you with knowledge, networks, and clarity to make your business expansion in Dubai a reality.
                 </p>
                 <p className="mb-4">
-                  That’s exactly what TAKEOFF Expedition to Explore is all about. Over four curated business journey designed for entrepreneurs who are serious about starting, scaling, or strengthening their business and networks in the UAE. 
+                  That’s exactly what<span className="text-[#359D9E]    font-semibold"> TAKEOFF Expedition to Explore </span>is all about. Over four curated business journey designed for entrepreneurs who are serious about starting, scaling, or strengthening their business and networks in the UAE. 
                 </p>
                 
                 <p>
                 
-                 <span className="text-[#215273]   font-semibold">Gain Knowledge →</span> Practical insights into market entry strategies, free zone options, legal frameworks, banking, and corporate tax.
-                  <br /><span className="text-[#215273]    font-semibold"> Build Networks</span> → Connect directly with partners, investors, government representatives, and leading industry experts.
-                  <br /><span className="text-[#215273]    font-semibold"> Explore Opportunities</span> → Site visits, exclusive sessions, and one-on-one interactions to open doors to your Dubai business journey.
+                 <span className="text-[#359D9E]    font-semibold">Gain Knowledge </span>→ Practical insights into market entry strategies, free zone options, legal frameworks, banking, and corporate tax.
+                  <br /><span className="text-[#359D9E]     font-semibold"> Build Networks</span> → Connect directly with partners, investors, government representatives, and leading industry experts.
+                  <br /><span className="text-[#359D9E]    font-semibold"> Explore Opportunities</span> → Site visits, exclusive sessions, and one-on-one interactions to open doors to your Dubai business journey.
                   <br /> 
                 </p>
                 <p className="mt-4">

@@ -94,7 +94,7 @@ export default function HomeBanner() {
         >
           <div className="w-full h-full relative shrink-0">
             <Image
-              src="/main-banner.jpg"
+              src="/1.jpg"
               alt="Dubai cityscape"
               fill
               className="object-cover"
@@ -103,7 +103,7 @@ export default function HomeBanner() {
           </div>
           <div className="w-full h-full relative shrink-0">
             <Image
-              src="/banner-2.jpg"
+              src="/2.jpg"
               alt="Business professionals"
               fill
               className="object-cover"
@@ -112,7 +112,7 @@ export default function HomeBanner() {
           </div>
           <div className="w-full h-full relative shrink-0">
             <Image
-              src="/banner-3.jpg"
+              src="/3.jpg"
               alt="Event audience"
               fill
               className="object-cover"
