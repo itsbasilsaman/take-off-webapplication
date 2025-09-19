@@ -6,23 +6,7 @@ import { BsWhatsapp } from "react-icons/bs"
 import { RxArrowTopRight } from "react-icons/rx";
 export default function Footer() {
 
-  const navigationLinks = [
-    { name: "Home", href: "#home", active: true },
-    { name: "About Takeoff 2025", href: "#about" },
-    { name: "Our Mission", href: "#mission" },
-    { name: "Speakers", href: "#speakers" },
-    { name: "Why Attend", href: "#why-attend" },
-    { name: "Who Should Attend", href: "#who-attend" },
-  ]
-
-  const secondaryLinks = [
-    { name: "Agenda", href: "#agenda" },
-    { name: "Highlights", href: "#highlights" },
-    { name: "FAQs", href: "#faqs" },
-    { name: "Terms and Conditions", href: "#terms" },
-    { name: "Privacy policy", href: "#privacy" },
-    { name: "Contact Us", href: "#contact" },
-  ]
+  
 
    const handleWhatsAppClick = () => {
     const phone = '919207078555'; // WhatsApp number (without + and spaces)
@@ -51,14 +35,31 @@ export default function Footer() {
           <span className="text-[#23b3a3] text-2xl font-semibold">Connect WhatsApp</span>
           <BsWhatsapp className="text-[#23b3a3] text-2xl" />
         </button>
-        <div className="flex-1 flex items-center justify-center">
-          <input
-            type="text"
-            placeholder="Discover Groundbreaking Insights, Connect With Industry Leaders, And Accelerate Your Business Growth At Takeoff 2025."
-            className="w-full max-w-xl rounded-full px-6 py-2 bg-transparent border border-gray-600 text-gray-300 placeholder:text-gray-400 focus:outline-none"
-          />
+  <div className="hidden sm:flex flex-1 items-center justify-center">
+          <div className="relative w-full max-w-xl h-12 overflow-hidden rounded-full border border-gray-600 bg-transparent">
+            <div className="absolute inset-0 flex items-center">
+              <div
+                className="whitespace-nowrap flex animate-ticker"
+                style={{ animation: 'ticker-left-right 14s linear infinite' }}
+              >
+                <span
+                  className="text-gray-300 text-lg px-6 font-semibold"
+                  style={{ letterSpacing: '0.06em' }}
+                >
+                  Takeoff Business Conclave & Expedition to Explore Dubai
+                </span>
+                {/* Repeat for seamless loop */}
+                <span
+                  className="text-gray-300 text-lg px-6 font-semibold"
+                  style={{ letterSpacing: '0.06em' }}
+                >
+                  Takeoff Business Conclave & Expedition to Explore Dubai
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
+  <div className="hidden sm:flex items-center gap-2">
             <button
                   className="flex items-center bg-[#359D9E] hover:bg-[#235c5d] rounded-full px-3 py-2 pr-3 transition-all duration-200 shadow-lg hover:shadow-xl group"
                   style={{minWidth:'200px'}}
@@ -113,20 +114,14 @@ export default function Footer() {
         {/* Navigation Links */}
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col gap-2">
-            <span className="text-gray-300">Home</span>
-            <span className="text-gray-300">About Takeoff 2025</span>
-            <span className="text-gray-300">Our Mission</span>
-            <span className="text-gray-300">Speakers</span>
-            <span className="text-gray-300">Why Attend</span>
-            <span className="text-gray-300">Who Should Attend</span>
+            <a href="#home" className="text-gray-300 cursor-pointer hover:text-[#23b3a3] transition-colors duration-200" style={{ scrollBehavior: 'smooth' }}>Home</a>
+            <a href="#about" className="text-gray-300 cursor-pointer hover:text-[#23b3a3] transition-colors duration-200" style={{ scrollBehavior: 'smooth' }}>About Us</a>
+            <a href="#speakers" className="text-gray-300 cursor-pointer hover:text-[#23b3a3] transition-colors duration-200" style={{ scrollBehavior: 'smooth' }}>Speakers</a>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="text-gray-300">Agenda</span>
-            <span className="text-gray-300">Highlights</span>
-            <span className="text-gray-300">FAQs</span>
-            <span className="text-gray-300">Terms and Conditions</span>
-            <span className="text-gray-300">Privacy policy</span>
-            <span className="text-gray-300">Contact Us</span>
+            <a href="#why-attend" className="text-gray-300 cursor-pointer hover:text-[#23b3a3] transition-colors duration-200" style={{ scrollBehavior: 'smooth' }}>Why Attend</a>
+            <a href="#who-attend" className="text-gray-300 cursor-pointer hover:text-[#23b3a3] transition-colors duration-200" style={{ scrollBehavior: 'smooth' }}>Who Should Attend</a>
+            <a href="#contact" className="text-gray-300 cursor-pointer hover:text-[#23b3a3] transition-colors duration-200" style={{ scrollBehavior: 'smooth' }}>Contact Us</a>
           </div>
         </div>
 
