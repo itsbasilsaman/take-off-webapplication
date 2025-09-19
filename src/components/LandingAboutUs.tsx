@@ -45,7 +45,7 @@ export default function LandingAbout() {
       {/* Main Content */}
   <div className="relative z-10 px-2 sm:px-4 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap- lg:gap-12 items-center">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-0 lg:gap-12 items-center">
             {/* Heading (always first on mobile) */}
             <div className="block lg:hidden w-full mb-4">
               <p className="text-[#215273] text-lg font-semibold md:text-xl mb-2  ">About Us - Takeoff 2025</p>
