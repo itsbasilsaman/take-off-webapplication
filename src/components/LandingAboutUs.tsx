@@ -88,12 +88,11 @@ export default function LandingAbout() {
                  <div className="uppercase text-[#215273]  text-[18px] font-semibold lg:hidden mb-2">  The UAE is not just a destination</div>  
                 <p>
                     it is the epicenter of the GCC’s economic transformation. And now, it’s your moment to step in. 
-                </p>
-                <p>
+               
                   As a growth-focused entrepreneur from Kerala, you already have the vision and drive. What you need is the right platform — one that equips you with knowledge, networks, and clarity to make your business expansion in Dubai a reality.
                 </p>
                 <p className="mb-4">
-                  That’s exactly what<span className="text-[#359D9E]    font-semibold"> TAKEOFF Expedition to Explore </span>is all about. Over four curated business journey designed for entrepreneurs who are serious about starting, scaling, or strengthening their business and networks in the UAE. 
+                  That’s exactly what<span className="text-[#359D9E]    font-semibold"> Take-Off Expedition to Explore </span>is all about. Over four curated business journey designed for entrepreneurs who are serious about starting, scaling, or strengthening their business and networks in the UAE. 
                 </p>
                 
                 <p>
