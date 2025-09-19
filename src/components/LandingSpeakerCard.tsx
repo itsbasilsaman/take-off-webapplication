@@ -126,7 +126,7 @@ export default function Home() {
             {speakers.map((speaker) => (
               <div
                 key={speaker.id}
-                className="flex-none w-64 snap-start"
+                className="flex-none w-56 snap-start"
               >
                 <div
                   className="relative overflow-hidden rounded-2xl bg-gray-100 aspect-[3/4] mb-4"

@@ -84,27 +84,24 @@ export default function LandingAbout() {
                 </h2>
               </div>
               <div className="space-y-3 md:space-y-6 text-black text-base md:text-lg leading-relaxed">
-                <p>
-                  The UAE is the epicenter of the GCC&lsquo;s economic transformation — and now is your moment to claim your
-                  place in it. As a growth-focused business owner from Kerala, you already have the vision and
-                  determination. What you need now is the right launchpad.
+                <p className="font-semibold text-[#215273] text-lg md:text-xl mb-2">
+                  The UAE is not just a destination — <span className="text-[#359D9E] font-bold">it is the epicenter of the GCC’s economic transformation</span>. And now, it’s your moment to step in.
                 </p>
                 <p>
-                  <span className="text-black font-semibold">The TakeOff Business Expedition 2025</span> is not a tour —{" "}
-                  <span className="text-black font-semibold">
-                    it&lsquo;s a carefully curated journey designed for entrepreneurs
-                  </span>{" "}
-                  who are serious about starting or expanding their business in Dubai.
+                  <span className="font-semibold text-[#359D9E]">Entrepreneurs from Kerala:</span> You already have the vision and drive. What you need is the right platform — one that equips you with <span className="font-bold">knowledge, networks, and clarity</span> to make your business expansion in Dubai a reality.
                 </p>
-                <p>
-                  Over four days, you&lsquo;ll gain{" "}
-                  <span className="text-black font-semibold">100% clarity on how to set up and scale in the UAE</span>:
-                  from market entry strategies, free zone options, and legal requirements to building networks with
-                  partners, investors, and industry leaders.
+                <p className="bg-[#f0f8fa] rounded-xl p-3 md:p-4     ">
+                  <span className="font-bold text-[#215273]">TAKEOFF Expedition to Explore</span> is designed for entrepreneurs serious about starting, scaling, or strengthening their business and networks in the UAE.
                 </p>
-                <p>
-                  Every session, visit, and interaction is tailored to cut through the noise and give you{" "}
-                  <span className="text-black font-semibold">actionable knowledge, strategic connections, and a clear pathway to launch in Dubai</span>.
+                <ul className="  space-y-2 md:space-y-3">
+                  <li><span className="font-bold text-[#359D9E]">Gain Knowledge:</span> Practical insights into market entry strategies, free zone options, legal frameworks, banking, and corporate tax.</li>
+                  <li><span className="font-bold text-[#359D9E]">Build Networks:</span> Connect directly with partners, investors, government representatives, and leading industry experts.</li>
+                  <li><span className="font-bold text-[#359D9E]">Explore Opportunities:</span> Site visits, exclusive sessions, and one-on-one interactions to open doors to your Dubai business journey.</li>
+                </ul>
+                
+                <p className="mt-2 md:mt-4">
+                  <span className="font-bold text-[#359D9E]">Every session, every meeting, and every experience</span> is designed to cut through the noise.<br />
+                  <span className="italic">This is not just a conclave. It’s your gateway to knowledge, networks, and new beginnings in the UAE.</span>
                 </p>
               </div>
               <div className="flex flex-row items-center justify-start gap-2 mt-4">
@@ -142,26 +139,26 @@ export default function LandingAbout() {
       >
         <span
           className="text-white font-bold italic text-sm md:text-[24px] px-4"
-          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
+          style={{ fontFamily: 'var(--font-dm-serif-display)', letterSpacing: '0.08em' }}
         >
           EARLY BIRD REGISTRATION CLOSING SOON!
         </span>
         <span
           className="text-white font-bold italic text-sm md:text-[24px] px-4"
-          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
+          style={{ fontFamily: 'var(--font-dm-serif-display)', letterSpacing: '0.08em' }}
         >
           20+ GLOBAL SPEAKERS CONFIRMED
         </span>
         {/* Repeat for seamless loop */}
         <span
           className="text-white font-bold italic text-sm md:text-[24px] px-4"
-          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
+          style={{ fontFamily: 'var(--font-dm-serif-display)', letterSpacing: '0.08em' }}
         >
           EARLY BIRD REGISTRATION CLOSING SOON!
         </span>
         <span
           className="text-white font-bold italic text-sm md:text-[24px] px-4"
-          style={{ fontFamily: 'var(--font-dm-serif-display)' }}
+          style={{ fontFamily: 'var(--font-dm-serif-display)', letterSpacing: '0.08em' }}
         >
           20+ GLOBAL SPEAKERS CONFIRMED
         </span>

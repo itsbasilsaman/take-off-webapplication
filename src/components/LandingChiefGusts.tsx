@@ -7,30 +7,31 @@ import { motion } from "framer-motion"
 const leaders = [
   {
     id: 1,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Dr. Abdussamad Samadani MP",
+    title: "Member of Indian Parliament",
+    image: "https://scontent.fcok3-2.fna.fbcdn.net/v/t39.30808-6/435724766_957968162366463_6637910842092321999_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=uPXz8OiFEqwQ7kNvwE4kNnE&_nc_oc=AdkVDuPCebmY4sRRceJ6xigPhvly8Icx-pAwf1JrIkja0aZpKJE--CnD12h8dB5s8Y5b78KOgmZBcaTWjZj2sSBZ&_nc_zt=23&_nc_ht=scontent.fcok3-2.fna&_nc_gid=vL40hYv17wu3nnFIvhzdNA&oh=00_AfZXBXJZGkwB5RcYkDf0DkOlZdmZbrMITrTQn84ugCD7cg&oe=68D2ECD7",
   },
   {
     id: 2,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Mr. PC Musthafa",
+    title: "CEO, ID Foods LTD",
+    image: "https://blackhattalent.com/wp-content/uploads/2023/07/1560066687545.jpeg",
   },
   {
     id: 3,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Dr. Anvar Ameen Chelat",
+    title: "Managing Director, Regency Group",
+    image: "https://scontent.fcok3-1.fna.fbcdn.net/v/t39.30808-6/480204633_28481457068169732_7079540419111445299_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3dVpbkgpAYYQ7kNvwG_SjR7&_nc_oc=AdnIem-666tVA_ZftxefwN5Z-zbWr5BZTNly_NmQr7w3vm84rGXl3kPmTb8GGWgoOFbyMXfFEvqhdWHwzjowPpik&_nc_zt=23&_nc_ht=scontent.fcok3-1.fna&_nc_gid=hAkB3LLToQ9dbnjZLSEr_Q&oh=00_AfYXJaMW2QtM8_TM85du8cMXSOthreFGA7u_Bu9bENdV8g&oe=68D2DFDC",
   },
   {
     id: 4,
-    name: "Dr. Aisha Rahman",
-    title: "CEO, FutureTech Global",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=facearea&w=400&h=500&facepad=2",
+    name: "Faisal AK",
+    title: "Executive Director – Malabar Gold",
+    image: "/anwar-ameen.jpg",
   },
-  
-]
+];
+
+
 
 export default function LandingChiefGusts() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -87,6 +88,7 @@ export default function LandingChiefGusts() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3, ease: 'easeOut' }}
                   />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                   <div className="absolute bottom-0 left-0 right-0  p-6">
                     <div className="absolute inset-0 "></div>
                     <div className="relative z-10">
@@ -105,7 +107,7 @@ export default function LandingChiefGusts() {
               {leaders.map((leader) => (
                 <motion.div
                   key={leader.id}
-                  className="flex-none w-64 snap-start"
+                  className="flex-none w-56 snap-start"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, amount: 0.3 }}
