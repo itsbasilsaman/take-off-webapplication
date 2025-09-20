@@ -12,12 +12,22 @@ export default function HomeBanner() {
   const [isLoading, setIsLoading] = useState(true)
   const [isVisible, setIsVisible] = useState(false)
   const [activeSlide, setActiveSlide] = useState(0)
-  const [timeLeft, setTimeLeft] = useState({
-    days: 45,
-    hours: 8,
-    minutes: 14,
-    seconds: 2,
-  })
+  // Calculate initial countdown from now (Sept 20, 12:12PM) to Sept 30, 11:59PM
+  function getInitialCountdown() {
+    const now = new Date(2025, 8, 20, 12, 12, 0); // September is month 8 (0-indexed)
+    const end = new Date(2025, 8, 30, 23, 59, 59);
+    const diff = end.getTime() - now.getTime();
+    let totalSeconds = Math.floor(diff / 1000);
+    const days = Math.floor(totalSeconds / (3600 * 24));
+    totalSeconds -= days * 3600 * 24;
+    const hours = Math.floor(totalSeconds / 3600);
+    totalSeconds -= hours * 3600;
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds - minutes * 60;
+    return { days, hours, minutes, seconds };
+  }
+
+  const [timeLeft, setTimeLeft] = useState(getInitialCountdown());
 
    const handleWhatsAppClick = () => {
     const phone = '919207078555'; // WhatsApp number (without + and spaces)
