@@ -150,7 +150,7 @@ export default function HomeBanner() {
             </div>
             <div className="flex items-center gap-2 text-white/90">
               <Image src="/location.png" alt="Location" width={50} height={50} className="h-8 w-8 object-contain mr-3" />
-              <span className="text-base">Dubai World Trade Centre, <br /> <span className="text-white/70 text-sm">Sheikh Zayed Rd, Dubai, UAE</span></span>
+              <span className="text-base">Dubai </span>
             </div>
           </div>
          <div className="flex items-center gap-2 justify-start animate-fade-in-up" style={{animationDelay: '0.8s'}}>
