@@ -9,25 +9,25 @@ const leaders = [
     id: 1,
     name: "Dr. Abdussamad Samadani  ",
     title: "Member of Indian Parliament",
-    image: "https://scontent.fcok3-2.fna.fbcdn.net/v/t39.30808-6/435724766_957968162366463_6637910842092321999_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=uPXz8OiFEqwQ7kNvwE4kNnE&_nc_oc=AdkVDuPCebmY4sRRceJ6xigPhvly8Icx-pAwf1JrIkja0aZpKJE--CnD12h8dB5s8Y5b78KOgmZBcaTWjZj2sSBZ&_nc_zt=23&_nc_ht=scontent.fcok3-2.fna&_nc_gid=vL40hYv17wu3nnFIvhzdNA&oh=00_AfZXBXJZGkwB5RcYkDf0DkOlZdmZbrMITrTQn84ugCD7cg&oe=68D2ECD7",
+    image: "/guest-2.jpg",
   },
   {
     id: 2,
     name: "Mr. PC Musthafa",
     title: "CEO, ID Foods LTD",
-    image: "https://blackhattalent.com/wp-content/uploads/2023/07/1560066687545.jpeg",
+    image: "/guest-3.jpg",
   },
   {
     id: 3,
     name: "Dr. Anvar Ameen Chelat",
     title: "Managing Director, Regency Group",
-    image: "/anwar-ameen.jpg",
+    image: "/guest-4.jpg",
   },
   {
     id: 4,
     name: "Faisal AK",
     title: "Executive Director – Malabar Gold",
-    image: "https://scontent.fcok3-1.fna.fbcdn.net/v/t39.30808-6/480204633_28481457068169732_7079540419111445299_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=3dVpbkgpAYYQ7kNvwG_SjR7&_nc_oc=AdnIem-666tVA_ZftxefwN5Z-zbWr5BZTNly_NmQr7w3vm84rGXl3kPmTb8GGWgoOFbyMXfFEvqhdWHwzjowPpik&_nc_zt=23&_nc_ht=scontent.fcok3-1.fna&_nc_gid=hAkB3LLToQ9dbnjZLSEr_Q&oh=00_AfYXJaMW2QtM8_TM85du8cMXSOthreFGA7u_Bu9bENdV8g&oe=68D2DFDC",
+    image: "/guest-1.jpg",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function LandingChiefGusts() {
                     <div className="absolute inset-0 "></div>
                     <div className="relative z-10">
                       <h3 className="text-white font-semibold text-lg mb-1 drop-shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-125 group-hover:drop-shadow-2xl">{leader.name}</h3>
-                      <p className="text-white text-sm drop-shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-125 group-hover:drop-shadow-2xl">{leader.title}</p>
+                      <p className="text-[#C09755] text-sm drop-shadow-lg transition-all duration-300 group-hover:scale-105 group-hover:brightness-125 group-hover:drop-shadow-2xl">{leader.title}</p>
                     </div>
                   </div>
                 </div>
